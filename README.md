@@ -39,6 +39,18 @@ Airtable is going to be used to record a calculation history that will display i
 
 The Airtable component has been made and can be found here: https://airtable.com/tblDwEjnBHgBNRJ0D/viwUXb3QTQLa1BwEI
 
+Example:
+```
+base('History').select({
+    view: 'Grid view'
+}).firstPage(function(err, records) {
+    if (err) { console.error(err); return; }
+    records.forEach(function(record) {
+        console.log('Retrieved', record.get('ID'));
+    });
+});
+```
+
 #### MVP 
 
 - Have a standard view that does the same basic calculations as the Calculator app on Windows (add, subtract, multiply, divide, square, square root, inverse, percent)
