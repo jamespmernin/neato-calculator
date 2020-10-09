@@ -1,4 +1,4 @@
-# General Assembly Project 2
+# General Assembly Project 2 - James Mernin
 
 ## Neato Calculator
 
