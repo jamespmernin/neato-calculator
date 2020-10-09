@@ -63,8 +63,8 @@ The following response is given when this GET request is made: `GET http://api.m
 | Scientific Mode (HTML/CSS/JS) | H | 5hrs |  |
 | Programmer Mode (HTML/CSS/JS) | M | 5hrs |  |
 | Testing and Cleanup | H | 5hrs |  |
-| Memory/History | L | 4hrs |  |
-| Total | H | 36hrs |  |
+| Memory/History | L | 5hrs |  |
+| Total | H | 32hrs |  |
 
 ## SWOT Analysis
 
