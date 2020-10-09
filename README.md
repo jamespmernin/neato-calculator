@@ -8,11 +8,18 @@ Using a calculator API with common functionality stored in Airtable, this app wi
 
 ## Wireframes
 
+### Mobile (360x640)
+![mobile (360x640](./assets/Mobile.png)
 
+### Tablet (768x1024)
+![tablet (768x1024)](./assets/Tablet.png)
+
+### Desktop (1920x1080)
+![desktop (1920x1080)](./assets/Desktop.png)
 
 ## Component Hierarchy
 
-
+![component hierarchy](./assets/Components.png)
 
 ## API and Data Sample
 
@@ -51,10 +58,10 @@ The following response is given when this GET request is made: `GET http://api.m
 | Component | Priority | Estimated Time | Actual Time |
 | --- | --- | --- | ---|
 | Airtable and API | H | 3hrs |  |
-| HTML and CSS | H | 4hrs |  |
-| Standard Mode | H | 5hrs |  |
-| Scientific Mode | H | 5hrs |  |
-| Programmer Mode | M | 5hrs |  |
+| Structure Building | H | 4hrs |  |
+| Standard Mode (HTML/CSS/JS) | H | 5hrs |  |
+| Scientific Mode (HTML/CSS/JS) | H | 5hrs |  |
+| Programmer Mode (HTML/CSS/JS) | M | 5hrs |  |
 | Testing and Cleanup | H | 5hrs |  |
 | Memory/History | L | 4hrs |  |
 | Total | H | 36hrs |  |
