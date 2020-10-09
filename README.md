@@ -4,7 +4,7 @@
 
 ## Project Description
 
-Using a calculator API with common functionality stored in Airtable, this app will be designed to perform all types of calculations. There will be multiple modes, including standard, scientific, and programming, and the history will keep track of all of your calculations.
+Using a calculator API with common functionality stored in Airtable, this app will be designed to perform all types of calculations. There will be multiple modes, including standard, scientific, and (optionally) programming, and the history will keep track of all of your calculations.
 
 ## Wireframes
 
@@ -33,12 +33,12 @@ The following response is given when this GET request is made: `GET http://api.m
 
 - Have a standard view that does the same basic calculations as the Calculator app on Windows (add, subtract, multiply, divide, square, square root, inverse, percent)
 - Have a scientific mode that processes more complex calculations (exponents, factorials, log and ln, absolute value, modulus)
-- Have a programmer mode that processes comp sci calculations (bit shift, hexadecimal, octal, binary)
+- Add a history log that will store all calculations (use Airtable for this)
 
 #### PostMVP  
 
+- Have a programmer mode that processes comp sci calculations (bit shift, hexadecimal, octal, binary)
 - Add a memory storage and recall system to save results
-- Add a history log that will store all calculations
 
 ## Project Schedule
 
@@ -48,9 +48,9 @@ The following response is given when this GET request is made: `GET http://api.m
 | Oct 10 | Set up basic HTML and CSS and build the window, adjust for media queries. | Incomplete |
 | Oct 11 | Standard calculator mode! Get all of the standard calculations to produce. | Incomplete |
 | Oct 12 | Scientific mode! Work on the scientific functions. | Incomplete |
-| Oct 13 | Programmer mode! Work on the comp sci calculations. | Incomplete |
+| Oct 13 | Work on history functionality. | Incomplete |
 | Oct 14 | Finalize MVP to make sure project is presentable. | Incomplete |
-| Oct 15 | Work on memory and history functionality. | Incomplete |
+| Oct 15 | Work on memory and programmer mode. | Incomplete |
 | Oct 16 | Present the project. | Incomplete |
 
 ## Timeframes
@@ -61,10 +61,11 @@ The following response is given when this GET request is made: `GET http://api.m
 | Structure Building | H | 4hrs |  |
 | Standard Mode (HTML/CSS/JS) | H | 5hrs |  |
 | Scientific Mode (HTML/CSS/JS) | H | 5hrs |  |
-| Programmer Mode (HTML/CSS/JS) | M | 5hrs |  |
+| History with Airtable | M | 5hrs |  |
 | Testing and Cleanup | H | 5hrs |  |
-| Memory/History | L | 5hrs |  |
-| Total | H | 32hrs |  |
+| Memory | L | 3hrs |
+| Programmer Mode (HTML/CSS/JS) | L | 5hrs |  |
+| Total | H | 35hrs |  |
 
 ## SWOT Analysis
 
