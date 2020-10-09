@@ -14,8 +14,8 @@ Using a calculator API with common functionality stored in Airtable, this app wi
 ### Tablet (768x1024)
 ![tablet (768x1024)](./assets/Tablet.png)
 
-### Desktop (1920x1080)
-![desktop (1920x1080)](./assets/Desktop.png)
+### Desktop (1280x720)
+![desktop (1280x720)](./assets/Desktop.png)
 
 ## Component Hierarchy
 
