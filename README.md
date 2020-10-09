@@ -39,16 +39,36 @@ Airtable is going to be used to record a calculation history that will display i
 
 The Airtable component has been made and can be found here: https://airtable.com/tblDwEjnBHgBNRJ0D/viwUXb3QTQLa1BwEI
 
-Example:
+Airtable Example:
 ```
-base('History').select({
-    view: 'Grid view'
-}).firstPage(function(err, records) {
-    if (err) { console.error(err); return; }
-    records.forEach(function(record) {
-        console.log('Retrieved', record.get('ID'));
-    });
-});
+{
+    "records": [
+        {
+            "id": "recZxkW7JXvcV7Mcd",
+            "fields": {
+                "id": 1,
+                "calculation": "2 + 3",
+                "result": "5"
+            },
+            "createdTime": "2020-10-09T17:06:31.000Z"
+        },
+        {
+            "id": "recD1RkF6uGrxBQeD",
+            "fields": {
+                "id": 2
+            },
+            "createdTime": "2020-10-09T17:06:31.000Z"
+        },
+        {
+            "id": "recspKOM10LckCol2",
+            "fields": {
+                "id": 3
+            },
+            "createdTime": "2020-10-09T17:06:31.000Z"
+        }
+    ],
+    "offset": "recspKOM10LckCol2"
+}
 ```
 
 #### MVP 
