@@ -29,6 +29,16 @@ The following response is given when this GET request is made: `GET http://api.m
 
 `0.667`
 
+### React Router
+
+The React router is going to be used to build each unique component. It will be used mainly to differentiate between the two (or three) calculator modes: Standard, Scientific, and (if I have time for post-MVP) Programmer. Each element will have its own calculator button layout and functionality to make API calls to Math.js in order to produce results.
+
+### Airtable
+
+Airtable is going to be used to record a calculation history that will display in its own unique window. The history will update after each completed calculation and will be able to be scrolled through and cleared out on command.
+
+The Airtable component has been made and can be found here: https://airtable.com/tblDwEjnBHgBNRJ0D/viwUXb3QTQLa1BwEI
+
 #### MVP 
 
 - Have a standard view that does the same basic calculations as the Calculator app on Windows (add, subtract, multiply, divide, square, square root, inverse, percent)
