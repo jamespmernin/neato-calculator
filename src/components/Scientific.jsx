@@ -4,7 +4,7 @@ import Display from './Display';
 function Scientific() {
   return (
     <>
-      <Display />
+      <Display default="0" />
       <div className="keypad">
         <button className="pad" name="xtothey" onClick={e => this.props.onClick(e.target.name)}><em>x</em><sup><em>y</em></sup></button>
         <button className="pad" name="yrootofx" onClick={e => this.props.onClick(e.target.name)}><sup><em>y</em></sup>√<sub><em>x</em></sub></button>

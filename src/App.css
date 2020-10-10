@@ -1,4 +1,6 @@
 * {
+  background-color: #000000;
+  color: #00FF00;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
 }
@@ -16,7 +18,7 @@ h1 {
 h2 {
   width: 360px;
   text-align: center;
-  font-size: 75%;
+  font-size: 65%;
 }
 
 h3 {
@@ -41,8 +43,16 @@ h4 {
 .result {
   width: 240px;
   height: 40px;
-  background-color: #DDDDDD;
+  background-color: #222222;
   margin: 0 0 0 60px;
+}
+
+.lastCalc,
+.resultText {
+  background-color: #222222;
+  padding: 0 5px 0 0;
+  text-align: right;
+  vertical-align: bottom;
 }
 
 .keypad {
@@ -59,7 +69,8 @@ h4 {
 }
 
 #historyList {
-  background-color: #DDDDDD;
+  border-radius: 5px;
+  background-color: #222222;
   margin: 0 0 0 60px;
   width: 240px;
   height: 300px;

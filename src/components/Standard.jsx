@@ -4,7 +4,7 @@ import Display from './Display';
 function Standard() {
   return (
     <>
-      <Display />
+      <Display default="0" />
       <div className="keypad">
         <button className="pad" name="percent" onClick={e => this.props.onClick(e.target.name)}>%</button>
         <button className="pad" name="clearentry" onClick={e => this.props.onClick(e.target.name)}>CE</button>

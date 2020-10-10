@@ -5,7 +5,8 @@ function Display(props) {
   let { result } = props;
   return (
     <div className="result">
-      <p>{result}</p>
+      <p className="lastCalc"></p>
+      <p className="resultText">{result}0</p>
     </div>
   );
 }
