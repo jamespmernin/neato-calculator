@@ -1,3 +1,25 @@
+* {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.App {
+  padding: 0 0 0 25px;
+}
+
+h1 {
+  font-size: 150%;
+}
+
+h2 {
+  font-size: 100%;
+}
+
+h1,
+h2 {
+  width: 240px;
+  text-align: center;
+}
+
 .mode {
   margin: 0;
   padding: 0;
@@ -11,10 +33,40 @@
   background-color: #DDDDDD;
 }
 
+.keypad {
+  margin: 0;
+  padding: 0;
+}
+
 .pad {
+  margin: 0;
+  padding: 0;
   width: 60px;
+  height: 30px;
+}
+
+#historyHeader {
+  padding: 0;
+  width: 240px;
+  text-align: center;
+}
+
+#historyList {
+  background-color: #DDDDDD;
+  width: 240px;
+  height: 450px;
 }
 
 p {
   margin: 0;
+}
+
+/* Following CSS fix found here: https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/ */
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub { 
+  top: 0.4em; 
 }
