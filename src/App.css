@@ -1,40 +1,48 @@
 * {
+  text-align: center;
   font-family: 'Orbitron', sans-serif;
 }
 
 .App {
-  padding: 0 0 0 25px;
+  padding: 0;
 }
 
 h1 {
-  font-size: 150%;
-}
-
-h2 {
+  width: 360px;
+  text-align: center;
   font-size: 100%;
 }
 
-h1,
 h2 {
-  width: 240px;
+  width: 360px;
+  text-align: center;
+  font-size: 75%;
+}
+
+h3 {
+  font-size: 100%;
+  margin: 10px 0;
+  padding: 0;
+  width: 360px;
   text-align: center;
 }
 
 h4 {
-  font-size: 75%;
+  font-size: 60%;
 }
 
 .mode {
   margin: 0;
   padding: 0;
+  font-size: 10px;
   width: 120px;
 }
 
 .result {
   width: 240px;
   height: 40px;
-  padding: 0;
   background-color: #DDDDDD;
+  margin: 0 0 0 60px;
 }
 
 .keypad {
@@ -43,22 +51,18 @@ h4 {
 }
 
 .pad {
+  font-size: 8px;
   margin: 0;
   padding: 0;
   width: 60px;
-  height: 30px;
-}
-
-#historyHeader {
-  padding: 0;
-  width: 240px;
-  text-align: center;
+  height: 20px;
 }
 
 #historyList {
   background-color: #DDDDDD;
+  margin: 0 0 0 60px;
   width: 240px;
-  height: 325px;
+  height: 300px;
 }
 
 p {
