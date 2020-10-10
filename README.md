@@ -87,7 +87,7 @@ Airtable Example:
 | Day | Deliverable | Status |
 |---|---| ---|
 | Oct 09 | Set up Airtable and API to make calls and store data. | Incomplete |
-| Oct 10 | Set up basic HTML and CSS and build the window, adjust for media queries. | Incomplete |
+| Oct 10 | Set up basic HTML and CSS and build the window, adjust for media queries. | Partially complete |
 | Oct 11 | Standard calculator mode! Get all of the standard calculations to produce. | Incomplete |
 | Oct 12 | Scientific mode! Work on the scientific functions. | Incomplete |
 | Oct 13 | Work on history functionality. | Incomplete |
@@ -100,7 +100,7 @@ Airtable Example:
 | Component | Priority | Estimated Time | Actual Time |
 | --- | --- | --- | ---|
 | Airtable and API | H | 3hrs |  |
-| Structure Building | H | 4hrs |  |
+| Structure Building | H | 4hrs | 4hrs |
 | Standard Mode (HTML/CSS/JS) | H | 5hrs |  |
 | Scientific Mode (HTML/CSS/JS) | H | 5hrs |  |
 | History with Airtable | M | 5hrs |  |
