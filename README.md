@@ -9,17 +9,17 @@ Using a calculator API with common functionality stored in Airtable, this app wi
 ## Wireframes
 
 ### Mobile (360x640)
-![mobile (360x640](./neato-calculator/assets/Mobile.png)
+![mobile (360x640](./public/assets/Mobile.png)
 
 ### Tablet (768x1024)
-![tablet (768x1024)](./neato-calculator/assets/Tablet.png)
+![tablet (768x1024)](./public/assets/Tablet.png)
 
 ### Desktop (1280x720)
-![desktop (1280x720)](./neato-calculator/assets/Desktop.png)
+![desktop (1280x720)](./public/assets/Desktop.png)
 
 ## Component Hierarchy
 
-![component hierarchy](./neato-calculator/assets/Components.png)
+![component hierarchy](./public/assets/Components.png)
 
 ## API and Data Sample
 
