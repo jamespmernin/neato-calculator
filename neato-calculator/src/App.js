@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link, Route } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 import Display from './components/Display';
 import Standard from './components/Standard';
@@ -14,8 +16,12 @@ function App() {
         <button className="mode">Scientific</button>
       </nav>
       <Display />
-      <Standard />
-      <Scientific />
+      <Route path="/standard">
+        <Standard />
+      </Route>
+      <Route path="/scientific">
+        <Scientific />
+      </Route>
     </div>
   );
 }

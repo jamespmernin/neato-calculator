@@ -1,8 +1,20 @@
+.mode {
+  margin: 0;
+  padding: 0;
+  width: 120px;
+}
+
 .result {
-  width: 200px;
-  height: 30px;
+  width: 240px;
+  height: 40px;
+  padding: 0;
+  background-color: #DDDDDD;
 }
 
 .pad {
-  width: 50px;
+  width: 60px;
+}
+
+p {
+  margin: 0;
 }
