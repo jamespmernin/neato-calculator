@@ -20,6 +20,10 @@ h2 {
   text-align: center;
 }
 
+h4 {
+  font-size: 75%;
+}
+
 .mode {
   margin: 0;
   padding: 0;
@@ -54,7 +58,7 @@ h2 {
 #historyList {
   background-color: #DDDDDD;
   width: 240px;
-  height: 450px;
+  height: 325px;
 }
 
 p {

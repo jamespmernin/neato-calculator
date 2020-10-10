@@ -1,68 +1,128 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# General Assembly Project 2 - James Mernin
 
-## Available Scripts
+## Neato Calculator
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+Using a calculator API with common functionality stored in Airtable, this app will be designed to perform all types of calculations. There will be multiple modes, including standard, scientific, and (optionally) programming, and the history will keep track of all of your calculations.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Wireframes
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Mobile (360x640)
+![mobile (360x640](./public/assets/Mobile.png)
 
-### `npm test`
+### Tablet (768x1024)
+![tablet (768x1024)](./public/assets/Tablet.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Desktop (1280x720)
+![desktop (1280x720)](./public/assets/Desktop.png)
 
-### `npm run build`
+## Component Hierarchy
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![component hierarchy](./public/assets/Components.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## API and Data Sample
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Math.js API](https://api.mathjs.org/)
 
-### `npm run eject`
+The following response is given when this GET request is made: `GET http://api.mathjs.org/v4/?expr=2%2F3&precision=3`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`0.667`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### React Router
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The React router is going to be used to build each unique component. It will be used mainly to differentiate between the two (or three) calculator modes: Standard, Scientific, and (if I have time for post-MVP) Programmer. Each element will have its own calculator button layout and functionality to make API calls to Math.js in order to produce results.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Airtable
 
-## Learn More
+Airtable is going to be used to record a calculation history that will display in its own unique window. The history will update after each completed calculation and will be able to be scrolled through and cleared out on command.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The Airtable component has been made and can be found here: https://airtable.com/tblDwEjnBHgBNRJ0D/viwUXb3QTQLa1BwEI
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Airtable Example:
+```
+{
+    "records": [
+        {
+            "id": "recZxkW7JXvcV7Mcd",
+            "fields": {
+                "id": 1,
+                "calculation": "2 + 3",
+                "result": "5"
+            },
+            "createdTime": "2020-10-09T17:06:31.000Z"
+        },
+        {
+            "id": "recD1RkF6uGrxBQeD",
+            "fields": {
+                "id": 2
+            },
+            "createdTime": "2020-10-09T17:06:31.000Z"
+        },
+        {
+            "id": "recspKOM10LckCol2",
+            "fields": {
+                "id": 3
+            },
+            "createdTime": "2020-10-09T17:06:31.000Z"
+        }
+    ],
+    "offset": "recspKOM10LckCol2"
+}
+```
 
-### Code Splitting
+#### MVP 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- Have a standard view that does the same basic calculations as the Calculator app on Windows (add, subtract, multiply, divide, square, square root, inverse, percent)
+- Have a scientific mode that processes more complex calculations (exponents, factorials, log and ln, absolute value, modulus)
+- Add a history log that will store all calculations (use Airtable for this)
 
-### Analyzing the Bundle Size
+#### PostMVP  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- Have a programmer mode that processes comp sci calculations (bit shift, hexadecimal, octal, binary)
+- Add a memory storage and recall system to save results
 
-### Making a Progressive Web App
+## Project Schedule
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+| Day | Deliverable | Status |
+|---|---| ---|
+| Oct 09 | Set up Airtable and API to make calls and store data. | Incomplete |
+| Oct 10 | Set up basic HTML and CSS and build the window, adjust for media queries. | Incomplete |
+| Oct 11 | Standard calculator mode! Get all of the standard calculations to produce. | Incomplete |
+| Oct 12 | Scientific mode! Work on the scientific functions. | Incomplete |
+| Oct 13 | Work on history functionality. | Incomplete |
+| Oct 14 | Finalize MVP to make sure project is presentable. | Incomplete |
+| Oct 15 | Work on memory and programmer mode. | Incomplete |
+| Oct 16 | Present the project. | Incomplete |
 
-### Advanced Configuration
+## Timeframes
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+| Component | Priority | Estimated Time | Actual Time |
+| --- | --- | --- | ---|
+| Airtable and API | H | 3hrs |  |
+| Structure Building | H | 4hrs |  |
+| Standard Mode (HTML/CSS/JS) | H | 5hrs |  |
+| Scientific Mode (HTML/CSS/JS) | H | 5hrs |  |
+| History with Airtable | M | 5hrs |  |
+| Testing and Cleanup | H | 5hrs |  |
+| Memory | L | 3hrs |
+| Programmer Mode (HTML/CSS/JS) | L | 5hrs |  |
+| Total | H | 35hrs |  |
 
-### Deployment
+## SWOT Analysis
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### Strengths:
 
-### `npm run build` fails to minify
+Being able to make the code functional will be a strength of mine. My years of programming experience has me used to fixing issues as they come.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Weaknesses:
+
+CSS is still elusive to me, so I expect to spend a lot of time trying to get this to work. Making use of React functionality and Airtable may also prove challenging.
+
+### Opportunities:
+
+Being able to apply my ability to look up resources if I get stuck will help me get through the hard parts of my code.
+
+### Threats:
+
+My biggest threat is going to be making sure I am not wasting time getting stuck on silly errors and taking too long to try to resolve them.

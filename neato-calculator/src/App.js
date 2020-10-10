@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import { Button } from 'semantic-ui-react'
+import { Route } from 'react-router-dom';
 // import axios from 'axios';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import History from './components/History';
+import Mode from './components/Mode';
 import Standard from './components/Standard';
 import Scientific from './components/Scientific';
 import './App.css';
@@ -10,21 +12,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Neato Calculator</h1>
-      <h2>by: James Mernin</h2>
-      <nav>
-        {/* Idea for buttons from https://stackoverflow.com/questions/42463263/wrapping-a-react-router-link-in-an-html-button */}
-        <Link to="/mode/standard">
-          <Button className="mode">
-            <p id="standard">Standard</p>
-          </Button>
-        </Link>
-        <Link to="/mode/scientific">
-          <Button className="mode">
-            <p id="scientific">Scientific</p>
-          </Button>
-        </Link>
-      </nav>
+      <Header />
+      <Mode />
       <Route path="/mode/standard">
         <Standard />
       </Route>
@@ -34,6 +23,7 @@ function App() {
       <Route path="/mode">
         <History />
       </Route>
+      <Footer />
     </div>
   );
 }

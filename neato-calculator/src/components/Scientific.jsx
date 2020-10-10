@@ -24,11 +24,11 @@ function Scientific() {
         <button className="pad" name="invert" onClick={e => this.props.onClick(e.target.name)}><sup>1</sup>/<sub><em>x</em></sub></button>
         <button className="pad" name="absolutevalue" onClick={e => this.props.onClick(e.target.name)}>|<em>x</em>|</button>
         <button className="pad" name="exponent" onClick={e => this.props.onClick(e.target.name)}>exp</button>
-        <button className="pad" name="modulus" onClick={e => this.props.onClick(e.target.name)}>mod</button><br />
+        <button className="pad" name="factorial" onClick={e => this.props.onClick(e.target.name)}><em>x</em>!</button><br />
 
         <button className="pad" name="leftparenthesis" onClick={e => this.props.onClick(e.target.name)}>(</button>
         <button className="pad" name="rightparenthesis" onClick={e => this.props.onClick(e.target.name)}>)</button>
-        <button className="pad" name="factorial" onClick={e => this.props.onClick(e.target.name)}><em>x</em>!</button>
+        <button className="pad" name="modulus" onClick={e => this.props.onClick(e.target.name)}>mod</button>
         <button className="pad" name="divide" onClick={e => this.props.onClick(e.target.name)}>÷</button><br />
 
         <button className="pad" name="seven" onClick={e => this.props.onClick(e.target.name)}>7</button>
