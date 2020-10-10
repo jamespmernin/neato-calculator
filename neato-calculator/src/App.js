@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Display } from './components/Display';
-import { Standard } from './components/Standard';
-import { Scientific } from './components/Scientific';
+import Display from './components/Display';
+import Standard from './components/Standard';
+import Scientific from './components/Scientific';
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <h1>Neato Calculator</h1>
       <h2>by: James Mernin</h2>
       <nav>
-        <button class="mode">Standard</button>
-        <button class="mode">Scientific</button>
+        <button className="mode">Standard</button>
+        <button className="mode">Scientific</button>
       </nav>
       <Display />
       <Standard />
