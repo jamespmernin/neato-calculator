@@ -3,38 +3,36 @@
   color: #00FF00;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
+  width: 360px;
 }
 
 .App {
   padding: 0;
 }
 
-h1 {
-  width: 360px;
+h1 /* Neato Calculator */ {
   text-align: center;
   font-size: 100%;
 }
 
-h2 {
-  width: 360px;
+h2 /* by: James Mernin */ {
   text-align: center;
   font-size: 65%;
 }
 
-h3 {
-  font-size: 100%;
+h3 /* History */ {
+  font-size: 80%;
   margin: 10px 0;
   padding: 0;
-  width: 360px;
   text-align: center;
 }
 
-h4 {
+h4 /* copyright */ {
   font-size: 60%;
+  margin: 5px 0 0 0;
 }
 
 .mode {
-  margin: 0;
   padding: 0;
   font-size: 10px;
   width: 120px;
@@ -73,7 +71,7 @@ h4 {
   background-color: #222222;
   margin: 0 0 0 60px;
   width: 240px;
-  height: 300px;
+  height: 250px;
 }
 
 p {
