@@ -6,7 +6,7 @@ function Display(props) {
   return (
     <div className="result">
       <p className="lastCalc"></p>
-      <p className="resultText">{result}0</p>
+      <p className="resultText">{result}</p>
     </div>
   );
 }
