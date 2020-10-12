@@ -106,6 +106,7 @@ function App() {
           phrase += '0';
         }
         phrase += '%';
+        number = ''; // Deleting number after symbol helps decimal checking
         break;
       case 'divide':
         // Division operator
@@ -114,6 +115,7 @@ function App() {
           phrase += '0';
         }
         phrase += '/';
+        number = '';
         break;
       case 'multiply':
         // Multiplication operator
@@ -122,6 +124,7 @@ function App() {
           phrase += '0';
         }
         phrase += '*';
+        number = '';
         break;
       case 'subtract':
         // Subtraction operator
@@ -130,6 +133,7 @@ function App() {
           phrase += '0';
         }
         phrase += '-';
+        number = '';
         break;
       case 'add':
         // Addition operator
@@ -138,14 +142,12 @@ function App() {
           phrase += '0';
         }
         phrase += '+';
+        number = '';
         break;
       case 'decimal':
         // Add a decimal if not already there
-        if (phrase === '') {
-          number += '0';
-          phrase += '0';
-        }
-        if (!phrase.includes('.')) {
+        if (!number.includes('.')) {
+          number += '.';
           phrase += '.';
         }
         break;
@@ -159,8 +161,6 @@ function App() {
         console.log('Somehow you did something I cannot handle');
         break;
     }
-    /*     console.log(`Number: ${number}`);
-        console.log(`Phrase: ${phrase}`); */
   }
 
   return (
