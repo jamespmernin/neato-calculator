@@ -17,71 +17,8 @@ function App() {
   let number = '';
 
   const handleClick = (button) => {
+    console.log(button);
     switch (button) {
-      case 'clearentry':
-        // Delete last thing entered
-        console.log('CE');
-        break;
-      case 'clear':
-        // Delete everything
-        console.log('C');
-        break;
-      case 'delete':
-        // Redundant
-        console.log('⌫');
-        break;
-      case 'percent':
-        // Add percent to expr
-        // console.log('%');
-        if (number !== '') {
-          Number(number);
-          number = (number / 100);
-          number = number.toString();
-          expr = expr.slice(0, -number.length);
-          expr += number;
-        }
-        break;
-      case 'invert':
-        // console.log('1/x');
-        if (number !== '') {
-          expr = expr.slice(0, -number.length);
-          expr += `1%2F${number}`;
-          // calculate(call + expr);
-        }
-        break;
-      case 'square':
-        if (number !== '') {
-          console.log('^');
-          expr += '%5E2';
-        }
-        break;
-      case 'squareroot':
-        console.log('sqrt');
-        break;
-      case 'negate':
-        // Change positive to negative and vice versa
-        // console.log('+/-');
-        if (number !== '') {
-          expr = expr.slice(0, -number.length);
-          expr += `unaryMinus(${number})`;
-          // calculate(call + expr);
-        }
-        break;
-      case 'divide':
-        console.log('/');
-        break;
-      case 'multiply':
-        console.log('*');
-        break;
-      case 'subtract':
-        console.log('-');
-        break;
-      case 'add':
-        console.log('+');
-        break;
-      case 'decimal':
-        console.log('.');
-        break;
       case 'nine':
         number += '9';
         expr += '9';
@@ -132,6 +69,70 @@ function App() {
         expr += '0';
         // console.log(0);
         break;
+      case 'clearentry':
+        // Delete last thing entered
+        console.log('CE');
+        break;
+      case 'clear':
+        // Delete everything
+        console.log('C');
+        break;
+      case 'delete':
+        // Redundant
+        console.log('⌫');
+        break;
+      case 'percent':
+        // Add percent to expr
+        // console.log('%');
+        if (number !== '') {
+          Number(number);
+          number = (number / 100);
+          number = number.toString();
+          expr = expr.slice(0, -number.length);
+          expr += number;
+        }
+        break;
+      case 'invert':
+        // console.log('1/x');
+        if (number !== '') {
+          expr = expr.slice(0, -number.length);
+          expr += `1%2F${number}`;
+          // calculate(call + expr);
+        }
+        break;
+      case 'square':
+        console.log(number);
+        if (number !== '') {
+          console.log('^');
+          expr += '%5E2';
+        }
+        break;
+      case 'squareroot':
+        break;
+      case 'negate':
+        // Change positive to negative and vice versa
+        // console.log('+/-');
+        if (number !== '') {
+          expr = expr.slice(0, -number.length);
+          expr += `unaryMinus(${number})`;
+          // calculate(call + expr);
+        }
+        break;
+      case 'divide':
+        console.log('/');
+        break;
+      case 'multiply':
+        console.log('*');
+        break;
+      case 'subtract':
+        console.log('-');
+        break;
+      case 'add':
+        console.log('+');
+        break;
+      case 'decimal':
+        console.log('.');
+        break;
       case 'equals':
         // Make axios expr here
         console.log('=');
@@ -141,6 +142,7 @@ function App() {
         console.log('Somehow you did something I cannot handle');
         break;
     }
+    console.log(number);
     console.log(`expr: ${call}${expr}`);
     return expr;
   }
