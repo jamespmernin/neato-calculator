@@ -1,6 +1,6 @@
 /* Soleil will review this code */
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 // import axios from 'axios';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -46,13 +46,16 @@ function App() {
     <div className="App">
       <Header />
       <Mode />
-      <Route path="/mode/standard">
+      <Route exact path="/">
+        <Redirect to="/standard" />
+      </Route>
+      <Route path="/standard">
         <Standard />
       </Route>
-      <Route path="/mode/scientific">
+      <Route path="/scientific">
         <Scientific />
       </Route>
-      <Route path="/mode">
+      <Route path="/">
         <History />
       </Route>
       <Footer />
