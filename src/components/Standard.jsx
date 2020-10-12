@@ -7,7 +7,7 @@ function Standard(props) {
       <Display />
       <div className="keypad">
         <button className="pad" name="percent" onClick={e => props.handleClick(e.target.name)}>%</button>
-        <button className="pad" name="clearentry" onClick={e => props.handleClick(e.target.name)}>CE</button>
+        <button className="pad" name="mod" onClick={e => props.handleClick(e.target.name)}>mod</button>
         <button className="pad" name="clear" onClick={e => props.handleClick(e.target.name)}>C</button>
         <button className="pad" name="delete" onClick={e => props.handleClick(e.target.name)}>⌫</button><br />
 
