@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-// import axios from 'axios';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import History from './components/History';
@@ -10,14 +9,12 @@ import Scientific from './components/Scientific';
 import './App.css';
 
 function App() {
-
-  // const prefix = 'http://api.mathjs.org/v4/?expr=';
-  // let expr = '';
   let number = '';
   let phrase = '';
 
   const handleClick = (button) => {
     switch (button) {
+      // Number cases add a number to number
       case 'nine':
         number += '9';
         phrase += '9';
@@ -64,93 +61,96 @@ function App() {
         phrase = '';
         break;
       case 'delete':
+        // Delete one entry in phrase
         phrase = phrase.slice(0, -1);
         break;
       case 'percent':
-        // Add percent to expr
+        // Add percent to number
         if (number !== '') {
           number = (Number(number) / 100).toString();
+          phrase = number;
         }
         break;
       case 'invert':
+        // Invert the number
         if (number !== '') {
-          // expr = expr.slice(0, -number.length);
-          /* expr += `1%2F${number}`;
-          calculate(prefix + expr); */
           number = (1 / Number(number)).toString();
+          phrase = number;
         }
         break;
       case 'square':
+        // Square the number
         if (number !== '') {
-          /* expr += '%5E2';
-          calculate(prefix + expr); */
           number = (Number(number) ** 2).toString();
+          phrase = number;
         }
         break;
       case 'squareroot':
+        // Take the square root
         if (number !== '') {
-          /*           expr = expr.slice(0, -number.length);
-                    expr += `sqrt(${number})`; */
-          // calculate(prefix + expr);
           number = Math.sqrt(Number(number)).toString();
+          phrase = number;
         }
         break;
       case 'negate':
         // Change positive to negative and vice versa
         if (number !== '') {
-          /*           expr = expr.slice(0, -number.length);
-                    expr += `unaryMinus(${number})`; */
-          // calculate(prefix + expr);
           number = (-Number(number)).toString();
+          phrase = number;
         }
         break;
       case 'mod':
-        if (number === '') {
+        // Calculate the modulus (the remainder of a quotient)
+        if (phrase === '') {
           number += '0';
           phrase += '0';
         }
         phrase += '%';
         break;
       case 'divide':
-        if (number === '') {
+        // Division operator
+        if (phrase === '') {
           number += '0';
           phrase += '0';
         }
         phrase += '/';
         break;
       case 'multiply':
-        if (number === '') {
+        // Multiplication operator
+        if (phrase === '') {
           number += '0';
           phrase += '0';
         }
         phrase += '*';
         break;
       case 'subtract':
-        if (number === '') {
+        // Subtraction operator
+        if (phrase === '') {
           number += '0';
           phrase += '0';
         }
         phrase += '-';
         break;
       case 'add':
-        if (number === '') {
+        // Addition operator
+        if (phrase === '') {
           number += '0';
           phrase += '0';
         }
         phrase += '+';
         break;
       case 'decimal':
-        if (number === '') {
+        // Add a decimal if not already there
+        if (phrase === '') {
           number += '0';
           phrase += '0';
         }
-        if (!number.includes('.')) {
-          number += '.';
+        if (!phrase.includes('.')) {
           phrase += '.';
         }
         break;
       case 'equals':
-        // calculate(prefix + expr);
+        // Evaluate the expression
         number = eval(phrase);
         phrase = '';
         break;
@@ -159,10 +159,8 @@ function App() {
         console.log('Somehow you did something I cannot handle');
         break;
     }
-    console.log(`Number: ${number}`);
-    console.log(`Phrase: ${phrase}`);
-    /* console.log(`expr: ${prefix}${expr}`); */
-    // return expr;
+    /*     console.log(`Number: ${number}`);
+        console.log(`Phrase: ${phrase}`); */
   }
 
   return (
