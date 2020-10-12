@@ -44,7 +44,10 @@ function App() {
       case 'invert':
         // console.log('1/x');
         if (number !== '') {
-          expr = expr.replace(/[0-9]/g, '');
+          let num = Math.abs(number.length);
+          console.log(num);
+          expr.slice(0, -num - 1);
+          console.log(`Slice: ${expr}`);
           expr += `1%2F${number}`;
           // calculate(call + expr);
         }
