@@ -7,10 +7,10 @@ function Mode() {
     <>
       <nav>
         {/* Idea for buttons from https://stackoverflow.com/questions/42463263/wrapping-a-react-router-link-in-an-html-button */}
-        <Link to="/mode/standard">
+        <Link to="/standard">
           <Button className="mode">Standard</Button>
         </Link>
-        <Link to="/mode/scientific">
+        <Link to="/scientific">
           <Button className="mode">Scientific</Button>
         </Link>
       </nav>
