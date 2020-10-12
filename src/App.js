@@ -37,17 +37,14 @@ function App() {
           Number(number);
           number = (number / 100);
           number = number.toString();
-          expr = expr.replace(/[0-9]/g, '');
+          expr = expr.slice(0, -number.length);
           expr += number;
         }
         break;
       case 'invert':
         // console.log('1/x');
         if (number !== '') {
-          let num = Math.abs(number.length);
-          console.log(num);
-          expr.slice(0, -num - 1);
-          console.log(`Slice: ${expr}`);
+          expr = expr.slice(0, -number.length);
           expr += `1%2F${number}`;
           // calculate(call + expr);
         }
@@ -65,7 +62,7 @@ function App() {
         // Change positive to negative and vice versa
         // console.log('+/-');
         if (number !== '') {
-          expr = expr.replace(/[0-9]/g, '');
+          expr = expr.slice(0, -number.length);
           expr += `unaryMinus(${number})`;
           // calculate(call + expr);
         }
