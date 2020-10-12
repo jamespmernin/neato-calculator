@@ -11,6 +11,7 @@ import './App.css';
 function App() {
   let number = '';
   let phrase = '';
+  let result = '';
 
   const handleClick = (button) => {
     switch (button) {
@@ -68,6 +69,7 @@ function App() {
         // Add percent to number
         if (number !== '') {
           number = (Number(number) / 100).toString();
+          result = number;
           phrase = number;
         }
         break;
@@ -75,6 +77,7 @@ function App() {
         // Invert the number
         if (number !== '') {
           number = (1 / Number(number)).toString();
+          result = number;
           phrase = number;
         }
         break;
@@ -82,6 +85,7 @@ function App() {
         // Square the number
         if (number !== '') {
           number = (Number(number) ** 2).toString();
+          result = number;
           phrase = number;
         }
         break;
@@ -89,6 +93,7 @@ function App() {
         // Take the square root
         if (number !== '') {
           number = Math.sqrt(Number(number)).toString();
+          result = number;
           phrase = number;
         }
         break;
@@ -96,6 +101,7 @@ function App() {
         // Change positive to negative and vice versa
         if (number !== '') {
           number = (-Number(number)).toString();
+          result = number;
           phrase = number;
         }
         break;
@@ -153,7 +159,8 @@ function App() {
         break;
       case 'equals':
         // Evaluate the expression
-        number = eval(phrase);
+        let cleanPhrase = phrase.replace(/[^-()\d/*+.]/g, ''); // found this regex here: https://stackoverflow.com/questions/6479236/calculate-string-value-in-javascript-not-using-eval
+        result = eval(cleanPhrase);
         phrase = '';
         break;
       default:
@@ -161,6 +168,8 @@ function App() {
         console.log('Somehow you did something I cannot handle');
         break;
     }
+    console.log(number);
+    console.log(phrase);
   }
 
   return (
@@ -171,7 +180,7 @@ function App() {
         <Redirect to="/standard" />
       </Route>
       <Route path="/standard">
-        <Standard handleClick={handleClick} />
+        <Standard handleClick={handleClick} result={result} />
       </Route>
       <Route path="/scientific">
         <Scientific />
