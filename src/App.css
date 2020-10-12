@@ -40,17 +40,16 @@ h4 /* copyright */ {
 
 .result {
   width: 240px;
-  height: 40px;
+  height: 25px;
   background-color: #222222;
   margin: 0 0 0 60px;
 }
 
-.lastCalc,
 .resultText {
   background-color: #222222;
-  padding: 0 5px 0 0;
+  padding: 0 7px 0 0;
   text-align: right;
-  vertical-align: bottom;
+  width: 233px;
 }
 
 .keypad {
@@ -71,7 +70,7 @@ h4 /* copyright */ {
   background-color: #222222;
   margin: 0 0 0 60px;
   width: 240px;
-  height: 250px;
+  height: 235px;
 }
 
 p {

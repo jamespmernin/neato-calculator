@@ -161,6 +161,7 @@ function App() {
         // Evaluate the expression
         let cleanPhrase = phrase.replace(/[^-()\d/*+.]/g, ''); // found this regex here: https://stackoverflow.com/questions/6479236/calculate-string-value-in-javascript-not-using-eval
         result = eval(cleanPhrase);
+        number = '';
         phrase = '';
         break;
       default:
@@ -170,6 +171,7 @@ function App() {
     }
     console.log(number);
     console.log(phrase);
+    console.log(result);
   }
 
   return (
