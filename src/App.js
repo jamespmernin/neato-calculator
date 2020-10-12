@@ -82,7 +82,8 @@ function App() {
         if (number !== '') {
           expr = expr.slice(0, -number.length);
           expr += `1%2F${number}`;
-          calculate(prefix + expr);
+          number = (calculate(prefix + expr).result);
+          console.log(number);
         }
         break;
       case 'square':
@@ -139,6 +140,8 @@ function App() {
         break;
       case 'equals':
         calculate(prefix + expr);
+        number = '';
+        expr = '';
         break;
       default:
         // Better error handling needed
@@ -153,9 +156,10 @@ function App() {
     try {
       result = await axios.get(call);
       console.log(`Result: ${result.data}`);
-
+      return result.data;
+      // printResult(result.data);
     } catch (e) {
-      result = "Error"
+      // printResult("Error");
     }
   }
 
