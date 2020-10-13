@@ -102,9 +102,9 @@ Airtable Example:
 | Airtable and API | H | 3hrs |  |
 | Structure Building | H | 4hrs | 4hrs |
 | Standard Mode (HTML/CSS/JS) | H | 5hrs | 5hrs |
-| Scientific Mode (HTML/CSS/JS) | H | 5hrs | 3hrs |
+| Scientific Mode (HTML/CSS/JS) | H | 5hrs | 6hrs |
 | History with Airtable | M | 5hrs |  |
-| Testing and Cleanup | H | 5hrs |  |
+| Testing and Cleanup | H | 5hrs | 2hrs |
 | Memory | L | 3hrs |
 | Programmer Mode (HTML/CSS/JS) | L | 5hrs |  |
 | Total | H | 35hrs |  |
