@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import History from './components/History';
@@ -22,8 +22,21 @@ function App() {
     }
   }
 
-  const evaluate = () => {
+  const handleSubmit = async () => {
+    const fields = {
+      entry: phrase
+    };
+    const airtableUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/History`;
+    await axios.post(airtableUrl, { fields }, {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
+      }
+    });
+  }
+
+  const evaluate = async () => {
     try {
+      await handleSubmit(); // eslint-disable-line no-eval
       setResult(eval(phrase)); // eslint-disable-line no-eval
       setPhrase(eval(phrase)); // eslint-disable-line no-eval
       console.log(`History: ${phrase} = ${eval(phrase)}`); // eslint-disable-line no-eval

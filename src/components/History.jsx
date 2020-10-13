@@ -2,7 +2,7 @@ import React from 'react';
 // import axios from 'axios';
 
 function History() {
-  let prefix = 'https://api.airtable.com/v4/'
+  // let prefix = 'https://api.airtable.com/v4/'
   /* let base = REACT_APP_AIRTABLE_BASE;
   let key = REACT_APP_AIRTABLE_KEY; */
 
