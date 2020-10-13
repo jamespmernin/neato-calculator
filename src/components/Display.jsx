@@ -5,14 +5,14 @@ function Display(props) {
   if (!props.result) {
     return (
       <div className="result">
-        {/* <p className="lastCalc"></p> */}
+        <p className="lastCalc">x</p>
         <p className="resultText">0</p>
       </div>
     )
   } else {
     return (
       <div className="result">
-        {/* <p className="lastCalc"></p> */}
+        <p className="lastCalc"></p>
         <p className="resultText">{props.result}</p>
       </div>
     );
