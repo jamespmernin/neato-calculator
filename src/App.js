@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect, Route } from 'react-router-dom';
+// import axios from 'axios';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import History from './components/History';
@@ -13,8 +14,7 @@ function App() {
   const [phrase, setPhrase] = useState('');
   const [result, setResult] = useState('0');
   const [errorMessage, setErrorMessage] = useState('');
-
-  let helpEndPhrase = false;
+  const [helpEndPhrase, setHelpEndPhrase] = useState(false);
 
   const addZero = () => {
     if (number === '') {
@@ -24,13 +24,10 @@ function App() {
 
   const evaluate = () => {
     try {
-      if (helpEndPhrase === true) {
-        setPhrase(phrase + ')');
-      }
       setResult(eval(phrase)); // eslint-disable-line no-eval
       setPhrase(eval(phrase)); // eslint-disable-line no-eval
-      // setNumber('');
-      helpEndPhrase = false;
+      console.log(`History: ${phrase} = ${eval(phrase)}`); // eslint-disable-line no-eval
+      setHelpEndPhrase(false);
     } catch (e) {
       setErrorMessage(e.message);
       setPhrase('');
@@ -56,7 +53,7 @@ function App() {
       case 'clear':
         // Delete everything
         setNumber('');
-        setPhrase(<br />);
+        setPhrase('');
         setResult('0');
         break;
       case 'delete':
@@ -75,8 +72,8 @@ function App() {
       case 'yrootx':
         // yth root
         if (number !== '') {
-          setPhrase(phrase + `Math.pow(${number}, 1/`);
-          helpEndPhrase = true;
+          setPhrase(`Math.pow(${number}, 1/`);
+          setHelpEndPhrase(true);
           setNumber('');
         }
         break;
@@ -102,7 +99,7 @@ function App() {
         // Log base y of x
         addZero();
         setPhrase(`Math.log(${number})/Math.log(10)`);
-        helpEndPhrase = true;
+        setHelpEndPhrase(true);
         setNumber('');
         break;
       case 'naturallog':
@@ -192,7 +189,7 @@ function App() {
           setNumber(number + '0');
           setPhrase(phrase + '0');
         }
-        setPhrase(phrase + button);
+        setPhrase(`${phrase} ${button} `);
         setNumber(''); // Deleting number after symbol helps decimal checking
         break;
       case 'decimal':
@@ -204,6 +201,15 @@ function App() {
         break;
       case 'equals':
         // Evaluate the expression
+        if (helpEndPhrase === true) {
+          try {
+            setPhrase(phrase + ')');
+            console.log(phrase);
+          } catch (e) {
+            setErrorMessage(e.message);
+            setPhrase('');
+          }
+        }
         evaluate();
         break;
       default:
