@@ -15,7 +15,8 @@ function App() {
   let helper = false;
 
   const evaluate = () => {
-    result = eval(phrase);
+    result = eval(phrase); // eslint-disable-line no-eval
+    helper = false;
     phrase = result;
     number = '';
   }
@@ -174,45 +175,35 @@ function App() {
         // Add percent to number
         if (number !== '') {
           number = (Number(number) / 100).toString();
-          result = eval(phrase);
-          phrase = result;
-          number = '';
+          evaluate();
         }
         break;
       case 'invert':
         // Invert the number
         if (number !== '' && number !== '0') {
           number = (1 / Number(number)).toString();
-          result = eval(phrase);
-          phrase = result;
-          number = '';
+          evaluate();
         }
         break;
       case 'square':
         // Square the number
         if (number !== '') {
           number = (Number(number) ** 2).toString();
-          result = eval(phrase);
-          phrase = result;
-          number = '';
+          evaluate();
         }
         break;
       case 'squareroot':
         // Take the square root
         if (number !== '') {
           number = Math.sqrt(Number(number)).toString();
-          result = eval(phrase);
-          phrase = result;
-          number = '';
+          evaluate();
         }
         break;
       case 'negate':
         // Change positive to negative and vice versa
         if (number !== '') {
           number = (-Number(number)).toString();
-          result = eval(phrase);
-          phrase = result;
-          number = '';
+          evaluate();
         }
         break;
       case 'mod':
@@ -273,10 +264,7 @@ function App() {
         if (helper === true) {
           phrase += ')';
         }
-        result = eval(phrase);
-        helper = false;
-        phrase = '';
-        number = '';
+        evaluate();
         break;
       default:
         // Better error handling needed
