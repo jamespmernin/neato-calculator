@@ -65,7 +65,49 @@ function App() {
         // Delete one entry in phrase
         phrase = phrase.slice(0, -1);
         break;
-      case 'percent':
+      case 'xtothey':
+        // 
+        break;
+      case 'yrootx':
+        // 
+        break;
+      case 'tentothex':
+        // 
+        break;
+      case 'twotothex':
+        // 
+        break;
+      case 'log':
+        // 
+        break;
+      case 'logyx':
+        // 
+        break;
+      case 'naturallog':
+        // 
+        break;
+      case 'etothex':
+        // 
+        break;
+      case 'pi':
+        // 
+        break;
+      case 'e':
+        // 
+        break;
+      case 'absolute':
+        // 
+        break;
+      case 'exponent':
+        // 
+        break;
+      case 'exponent':
+        // 
+        break;
+      case 'leftparen':
+        // 
+        break;
+      case 'rightparen':
         // Add percent to number
         if (number !== '') {
           number = (Number(number) / 100).toString();
