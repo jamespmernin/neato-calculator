@@ -13,6 +13,12 @@ function App() {
   let phrase = '';
   let result = '';
 
+  const evaluate = () => {
+    result = eval(phrase);
+    phrase = result;
+    number = '';
+  }
+
   const handleClick = (button) => {
     switch (button) {
       // Number cases add a number to number
@@ -88,9 +94,7 @@ function App() {
           number = 0;
         }
         phrase = `10**${number}`;
-        result = eval(phrase);
-        phrase = result;
-        number = '';
+        evaluate();
         break;
       case 'twotothex':
         // Use number to return 2 to its power
@@ -98,9 +102,7 @@ function App() {
           number = 0;
         }
         phrase = `2**${number}`;
-        result = eval(phrase);
-        phrase = result;
-        number = '';
+        evaluate();
         break;
       case 'log':
         // Log base 10
@@ -108,9 +110,7 @@ function App() {
           number = 0;
         }
         phrase = `Math.log10(${number})`;
-        result = eval(phrase);
-        phrase = result;
-        number = '';
+        evaluate();
         break;
       case 'logyx':
         // Log base y of x
@@ -126,9 +126,7 @@ function App() {
           number = 0;
         }
         phrase = `Math.log(${number})`;
-        result = eval(phrase);
-        phrase = result;
-        number = '';
+        evaluate();
         break;
       case 'etothex':
         // Use number to return e to its power
@@ -136,9 +134,7 @@ function App() {
           number = 0;
         }
         phrase = `e**${number}`;
-        result = eval(phrase);
-        phrase = result;
-        number = '';
+        evaluate();
         break;
       case 'pi':
         // Get value of pi
@@ -154,9 +150,7 @@ function App() {
           number = 0;
         }
         phrase = `Math.abs(${number})`;
-        result = eval(phrase);
-        phrase = result;
-        number = '';
+        evaluate();
         break;
       case 'cube':
         // Cube the number
