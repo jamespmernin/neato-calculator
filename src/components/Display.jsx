@@ -5,7 +5,7 @@ function Display(props) {
   if (!props.result) {
     return (
       <div className="result">
-        <p className="lastCalc">x</p>
+        <p className="lastCalc"><br /></p>
         <p className="resultText">0</p>
       </div>
     )
