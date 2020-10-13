@@ -11,7 +11,7 @@ import './App.css';
 function App() {
   let [number, setNumber] = useState('');
   let [phrase, setPhrase] = useState('');
-  let [result, setResult] = useState('');
+  let [result, setResult] = useState('0');
 
   let helpEndPhrase = false;
 
@@ -27,7 +27,6 @@ function App() {
       helpEndPhrase = false;
     }
     setResult(eval(phrase)); // eslint-disable-line no-eval
-    console.log(`Result: ${result}`);
     setPhrase('');
     setNumber('');
   }
@@ -207,6 +206,7 @@ function App() {
     }
     console.log(`Number: ${number}`);
     console.log(`Phrase: ${phrase}`);
+    console.log(`Result: ${result}`);
   }
 
   return (
