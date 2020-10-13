@@ -9,9 +9,10 @@ import Scientific from './components/Scientific';
 import './App.css';
 
 function App() {
-  let [number, setNumber] = useState('');
-  let [phrase, setPhrase] = useState('');
-  let [result, setResult] = useState('0');
+  const [number, setNumber] = useState('');
+  const [phrase, setPhrase] = useState('');
+  const [result, setResult] = useState('0');
+  const [errorMessage, setErrorMessage] = useState('');
 
   let helpEndPhrase = false;
 
@@ -22,13 +23,18 @@ function App() {
   }
 
   const evaluate = () => {
-    if (helpEndPhrase === true) {
-      setPhrase(phrase += ')');
+    try {
+      if (helpEndPhrase === true) {
+        setPhrase(phrase + ')');
+      }
+      setResult(eval(phrase)); // eslint-disable-line no-eval
+      setPhrase(eval(phrase)); // eslint-disable-line no-eval
+      // setNumber('');
       helpEndPhrase = false;
+    } catch (e) {
+      setErrorMessage(e.message);
+      setPhrase('');
     }
-    setResult(eval(phrase)); // eslint-disable-line no-eval
-    setPhrase('');
-    setNumber('');
   }
 
   const handleClick = (button) => {
@@ -44,8 +50,8 @@ function App() {
       case '1':
       case '0':
         // Number cases add the digit to a number
-        setNumber(number += button);
-        setPhrase(phrase += button);
+        setNumber(number + button);
+        setPhrase(phrase + button);
         break;
       case 'clear':
         // Delete everything
@@ -60,16 +66,16 @@ function App() {
       case 'exponent':
         // exponent
         if (phrase === '') {
-          setNumber(phrase += '0');
-          setPhrase(phrase += '0');
+          setNumber(phrase + '0');
+          setPhrase(phrase + '0');
         }
-        setPhrase(phrase += '**');
+        setPhrase(phrase + '**');
         setNumber('');
         break;
       case 'yrootx':
         // yth root
         if (number !== '') {
-          setPhrase(phrase += `Math.pow(${number}, 1/`);
+          setPhrase(phrase + `Math.pow(${number}, 1/`);
           helpEndPhrase = true;
           setNumber('');
         }
@@ -77,19 +83,19 @@ function App() {
       case 'tentothex':
         // Use number to return 10 to its power
         addZero();
-        setPhrase(phrase += `10**${number}`);
+        setPhrase(phrase + `10**${number}`);
         evaluate();
         break;
       case 'twotothex':
         // Use number to return 2 to its power
         addZero();
-        setPhrase(phrase += `2**${number}`);
+        setPhrase(phrase + `2**${number}`);
         evaluate();
         break;
       case 'log':
         // Log base 10
         addZero();
-        setPhrase(phrase += `Math.log10(${number})`);
+        setPhrase(phrase + `Math.log10(${number})`);
         evaluate();
         break;
       case 'logyx':
@@ -97,7 +103,7 @@ function App() {
         addZero();
         setPhrase(`Math.log(${number})/Math.log(10)`);
         helpEndPhrase = true;
-        setNumber = '';
+        setNumber('');
         break;
       case 'naturallog':
         // Log base e
@@ -134,11 +140,11 @@ function App() {
         break;
       case 'leftparen':
         // Add a left parenthesis
-        phrase += '(';
+        setPhrase(phrase + '(');
         break;
       case 'rightparen':
         // Add a right parenthesis
-        setPhrase(phrase += ')');
+        setPhrase(phrase + ')');
         break;
       case 'percent':
         // Add percent to number
@@ -183,17 +189,17 @@ function App() {
       case '+':
         // Calculate the modulus (the remainder of a quotient)
         if (phrase === '') {
-          setNumber(number += '0');
-          setPhrase(phrase += '0');
+          setNumber(number + '0');
+          setPhrase(phrase + '0');
         }
-        setPhrase(phrase += button);
+        setPhrase(phrase + button);
         setNumber(''); // Deleting number after symbol helps decimal checking
         break;
       case 'decimal':
         // Add a decimal if not already there
         if (!number.includes('.')) {
-          setNumber += '.';
-          phrase += '.';
+          setNumber(number + '.');
+          setPhrase(phrase + '.');
         }
         break;
       case 'equals':
@@ -212,6 +218,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <h3>{errorMessage}</h3>
       <Mode />
       <Route exact path="/">
         <Redirect to="/standard" />
