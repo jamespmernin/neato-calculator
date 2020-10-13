@@ -12,7 +12,7 @@ function Display(props) {
   } else {
     return (
       <div className="result">
-        <p className="lastCalc"></p>
+        <p className="lastCalc">{props.phrase}</p>
         <p className="resultText">{props.result}</p>
       </div>
     );

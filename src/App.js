@@ -51,7 +51,8 @@ function App() {
       case 'clear':
         // Delete everything
         setNumber('');
-        setPhrase('');
+        setPhrase(<br />);
+        setResult('0');
         break;
       case 'delete':
         // Delete one entry in phrase
@@ -156,10 +157,11 @@ function App() {
         break;
       case 'square':
         // Square the number
-        if (number !== '') {
-          setNumber((Number(number) ** 2).toString());
-          evaluate();
+        if (number === '') {
+          setNumber('0');
         }
+        setNumber((Number(number) ** 2).toString());
+        evaluate();
         break;
       case 'squareroot':
         // Take the square root
@@ -215,10 +217,10 @@ function App() {
         <Redirect to="/standard" />
       </Route>
       <Route path="/standard">
-        <Standard handleClick={handleClick} result={result} />
+        <Standard handleClick={handleClick} phrase={phrase} result={result} />
       </Route>
       <Route path="/scientific">
-        <Scientific handleClick={handleClick} />
+        <Scientific handleClick={handleClick} phrase={phrase} result={result} />
       </Route>
       <Route path="/">
         <History />

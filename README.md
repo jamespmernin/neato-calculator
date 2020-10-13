@@ -89,7 +89,7 @@ Airtable Example:
 | Oct 09 | Set up Airtable and API to make calls and store data. | Incomplete |
 | Oct 10 | Set up basic HTML and CSS and build the window, adjust for media queries. | Partially complete |
 | Oct 11 | Standard calculator mode! Get all of the standard calculations to produce. | Mostly complete |
-| Oct 12 | Scientific mode! Work on the scientific functions. | Incomplete |
+| Oct 12 | Scientific mode! Work on the scientific functions. | Mostly complete |
 | Oct 13 | Work on history functionality. | Incomplete |
 | Oct 14 | Finalize MVP to make sure project is presentable. | Incomplete |
 | Oct 15 | Work on memory and programmer mode. | Incomplete |
@@ -102,7 +102,7 @@ Airtable Example:
 | Airtable and API | H | 3hrs |  |
 | Structure Building | H | 4hrs | 4hrs |
 | Standard Mode (HTML/CSS/JS) | H | 5hrs | 5hrs |
-| Scientific Mode (HTML/CSS/JS) | H | 5hrs |  |
+| Scientific Mode (HTML/CSS/JS) | H | 5hrs | 3hrs |
 | History with Airtable | M | 5hrs |  |
 | Testing and Cleanup | H | 5hrs |  |
 | Memory | L | 3hrs |

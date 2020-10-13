@@ -4,7 +4,7 @@ import Display from './Display';
 function Standard(props) {
   return (
     <>
-      <Display result={props.result} />
+      <Display phrase={props.phrase} result={props.result} />
       <div className='keypad'>
         <button className='pad' name='percent' onClick={e => props.handleClick(e.target.name)}>%</button>
         <button className='pad' name='%' onClick={e => props.handleClick(e.target.name)}>mod</button>
