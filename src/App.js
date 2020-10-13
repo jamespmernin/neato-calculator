@@ -65,14 +65,29 @@ function App() {
         // Delete one entry in phrase
         phrase = phrase.slice(0, -1);
         break;
-      case 'xtothey':
-        // 
+      case 'exponent':
+        // exponent
+        if (phrase === '') {
+          number += '0';
+          phrase += '0';
+        }
+        phrase += '**';
+        number = '';
         break;
       case 'yrootx':
-        // 
+        // yth root
+        if (number !== '') {
+          phrase = `Math.pow(${number}, 1/)`;
+          number = '';
+        }
+        // TODO: Check for number and add it to phrase
         break;
       case 'tentothex':
-        // 
+        // Use number to return 10 to it
+        if (number === '') {
+          number = 0;
+        }
+        phrase = `10**${number}`;
         break;
       case 'twotothex':
         // 
@@ -98,10 +113,7 @@ function App() {
       case 'absolute':
         // 
         break;
-      case 'exponent':
-        // 
-        break;
-      case 'exponent':
+      case 'cube':
         // 
         break;
       case 'leftparen':
@@ -201,8 +213,8 @@ function App() {
         break;
       case 'equals':
         // Evaluate the expression
-        let cleanPhrase = phrase.replace(/[^-()\d/*+.]/g, ''); // found this regex here: https://stackoverflow.com/questions/6479236/calculate-string-value-in-javascript-not-using-eval
-        result = eval(cleanPhrase);
+        /* let cleanPhrase = phrase.replace(/[^-()\d/*+.]/g, '') */; // found this regex here: https://stackoverflow.com/questions/6479236/calculate-string-value-in-javascript-not-using-eval
+        result = eval(phrase);
         number = '';
         phrase = '';
         break;
@@ -227,7 +239,7 @@ function App() {
         <Standard handleClick={handleClick} result={result} />
       </Route>
       <Route path="/scientific">
-        <Scientific />
+        <Scientific handleClick={handleClick} />
       </Route>
       <Route path="/">
         <History />
