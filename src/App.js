@@ -12,6 +12,7 @@ function App() {
   let number = '';
   let phrase = '';
   let result = '';
+  let helper = false;
 
   const evaluate = () => {
     result = eval(phrase);
@@ -83,10 +84,10 @@ function App() {
       case 'yrootx':
         // yth root
         if (number !== '') {
-          phrase = `Math.pow(${number}, 1/)`;
+          phrase = `Math.pow(${number}, 1/`;
+          helper = true;
           number = '';
         }
-        // TODO: Check for number and add it to phrase
         break;
       case 'tentothex':
         // Use number to return 10 to its power
@@ -118,7 +119,8 @@ function App() {
           number = 0;
         }
         phrase = `Math.log(${number})/Math.log(10)`;
-        // TODO: How to get x
+        helper = true;
+        number = '';
         break;
       case 'naturallog':
         // Log base e
@@ -179,7 +181,7 @@ function App() {
         break;
       case 'invert':
         // Invert the number
-        if (number !== '') {
+        if (number !== '' && number !== '0') {
           number = (1 / Number(number)).toString();
           result = eval(phrase);
           phrase = result;
@@ -268,7 +270,11 @@ function App() {
       case 'equals':
         // Evaluate the expression
         /* let cleanPhrase = phrase.replace(/[^-()\d/*+.]/g, '') */; // found this regex here: https://stackoverflow.com/questions/6479236/calculate-string-value-in-javascript-not-using-eval
+        if (helper === true) {
+          phrase += ')';
+        }
         result = eval(phrase);
+        helper = false;
         phrase = '';
         number = '';
         break;
