@@ -12,11 +12,11 @@ function App() {
   let number = '';
   let phrase = '';
   let result = '';
-  let helper = false;
+  let helpEndPhrase = false;
 
   const evaluate = () => {
     result = eval(phrase); // eslint-disable-line no-eval
-    helper = false;
+    helpEndPhrase = false;
     phrase = result;
     number = '';
   }
@@ -86,7 +86,7 @@ function App() {
         // yth root
         if (number !== '') {
           phrase = `Math.pow(${number}, 1/`;
-          helper = true;
+          helpEndPhrase = true;
           number = '';
         }
         break;
@@ -120,7 +120,7 @@ function App() {
           number = 0;
         }
         phrase = `Math.log(${number})/Math.log(10)`;
-        helper = true;
+        helpEndPhrase = true;
         number = '';
         break;
       case 'naturallog':
@@ -261,7 +261,7 @@ function App() {
       case 'equals':
         // Evaluate the expression
         /* let cleanPhrase = phrase.replace(/[^-()\d/*+.]/g, '') */; // found this regex here: https://stackoverflow.com/questions/6479236/calculate-string-value-in-javascript-not-using-eval
-        if (helper === true) {
+        if (helpEndPhrase === true) {
           phrase += ')';
         }
         evaluate();
