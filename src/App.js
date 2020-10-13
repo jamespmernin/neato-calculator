@@ -83,80 +83,140 @@ function App() {
         // TODO: Check for number and add it to phrase
         break;
       case 'tentothex':
-        // Use number to return 10 to it
+        // Use number to return 10 to its power
         if (number === '') {
           number = 0;
         }
         phrase = `10**${number}`;
+        result = eval(phrase);
+        phrase = result;
+        number = '';
         break;
       case 'twotothex':
-        // 
+        // Use number to return 2 to its power
+        if (number === '') {
+          number = 0;
+        }
+        phrase = `2**${number}`;
+        result = eval(phrase);
+        phrase = result;
+        number = '';
         break;
       case 'log':
-        // 
+        // Log base 10
+        if (number === '') {
+          number = 0;
+        }
+        phrase = `Math.log10(${number})`;
+        result = eval(phrase);
+        phrase = result;
+        number = '';
         break;
       case 'logyx':
-        // 
+        // Log base y of x
+        if (number === '') {
+          number = 0;
+        }
+        phrase = `Math.log(${number})/Math.log(10)`;
+        // TODO: How to get x
         break;
       case 'naturallog':
-        // 
+        // Log base e
+        if (number === '') {
+          number = 0;
+        }
+        phrase = `Math.log(${number})`;
+        result = eval(phrase);
+        phrase = result;
+        number = '';
         break;
       case 'etothex':
-        // 
+        // Use number to return e to its power
+        if (number === '') {
+          number = 0;
+        }
+        phrase = `e**${number}`;
+        result = eval(phrase);
+        phrase = result;
+        number = '';
         break;
       case 'pi':
-        // 
+        // Get value of pi
+        number = Math.PI();
         break;
       case 'e':
-        // 
+        // Get value of e
+        number = Math.E();
         break;
       case 'absolute':
-        // 
+        // Get absolute value of number
+        if (number === '') {
+          number = 0;
+        }
+        phrase = `Math.abs(${number})`;
+        result = eval(phrase);
+        phrase = result;
+        number = '';
         break;
       case 'cube':
-        // 
+        // Cube the number
+        if (number !== '') {
+          number = (Number(number) ** 3).toString();
+          result = number;
+          phrase = number;
+        }
         break;
       case 'leftparen':
-        // 
+        // Add a left parenthesis
+        phrase += '(';
         break;
       case 'rightparen':
+        // Add a right parenthesis
+        phrase += ')';
+        break;
+      case 'percent':
         // Add percent to number
         if (number !== '') {
           number = (Number(number) / 100).toString();
-          result = number;
-          phrase = number;
+          result = eval(phrase);
+          phrase = result;
+          number = '';
         }
         break;
       case 'invert':
         // Invert the number
         if (number !== '') {
           number = (1 / Number(number)).toString();
-          result = number;
-          phrase = number;
+          result = eval(phrase);
+          phrase = result;
+          number = '';
         }
         break;
       case 'square':
         // Square the number
         if (number !== '') {
           number = (Number(number) ** 2).toString();
-          result = number;
-          phrase = number;
+          result = eval(phrase);
+          phrase = result;
+          number = '';
         }
         break;
       case 'squareroot':
         // Take the square root
         if (number !== '') {
           number = Math.sqrt(Number(number)).toString();
-          result = number;
-          phrase = number;
+          result = eval(phrase);
+          phrase = result;
+          number = '';
         }
         break;
       case 'negate':
         // Change positive to negative and vice versa
         if (number !== '') {
           number = (-Number(number)).toString();
-          result = number;
-          phrase = number;
+          result = eval(phrase);
+          phrase = result;
+          number = '';
         }
         break;
       case 'mod':
@@ -215,8 +275,8 @@ function App() {
         // Evaluate the expression
         /* let cleanPhrase = phrase.replace(/[^-()\d/*+.]/g, '') */; // found this regex here: https://stackoverflow.com/questions/6479236/calculate-string-value-in-javascript-not-using-eval
         result = eval(phrase);
-        number = '';
         phrase = '';
+        number = '';
         break;
       default:
         // Better error handling needed
