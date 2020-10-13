@@ -27,13 +27,13 @@ function App() {
       helpEndPhrase = false;
     }
     setResult(eval(phrase)); // eslint-disable-line no-eval
-    setPhrase = result;
+    console.log(`Result: ${result}`);
+    setPhrase('');
     setNumber('');
   }
 
   const handleClick = (button) => {
     switch (button) {
-      // Number cases add a number to number
       case '9':
       case '8':
       case '7':
@@ -44,6 +44,7 @@ function App() {
       case '2':
       case '1':
       case '0':
+        // Number cases add the digit to a number
         setNumber(number += button);
         setPhrase(phrase += button);
         break;
@@ -204,7 +205,6 @@ function App() {
     }
     console.log(`Number: ${number}`);
     console.log(`Phrase: ${phrase}`);
-    console.log(`Result: ${result}`);
   }
 
   return (
