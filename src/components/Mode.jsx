@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react'
 
 function Mode() {
   const activeStyle = {
-    boxShadow: '0 4px 4px green'
+    boxShadow: '0 4px 0 green'
   };
   return (
     <>
