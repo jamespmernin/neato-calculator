@@ -23,10 +23,13 @@ function App() {
   }
 
   const handleSubmit = async () => {
+    const urlPrefix = 'https://api.airtable.com/v0/';
+    const base = process.env.REACT_APP_AIRTABLE_BASE;
+    const table = '/History';
     const fields = {
       entry: phrase
     };
-    const airtableUrl = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/History`;
+    const airtableUrl = `${urlPrefix}${base}${table}`;
     await axios.post(airtableUrl, { fields }, {
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
