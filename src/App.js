@@ -13,6 +13,7 @@ function App() {
   const [number, setNumber] = useState('');
   const [phrase, setPhrase] = useState('');
   const [result, setResult] = useState('0');
+  const [submit, setSubmit] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [helpEndPhrase, setHelpEndPhrase] = useState(false);
 
@@ -35,15 +36,19 @@ function App() {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
       }
     });
+    setSubmit(await axios.get(airtableUrl, { fields }, {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
+      }
+    }));
   }
 
   const evaluate = async () => {
     const finalPhrase = helpEndPhrase ? phrase + ')' : phrase;
     try {
-      await handleSubmit(finalPhrase); // eslint-disable-line no-eval
+      await handleSubmit(`${finalPhrase} = ${eval(finalPhrase)}`); // eslint-disable-line no-eval
       setResult(eval(finalPhrase)); // eslint-disable-line no-eval
       setPhrase(phrase + ' = ' + eval(finalPhrase)); // eslint-disable-line no-eval
-      console.log(`History: ${finalPhrase} = ${eval(finalPhrase)}`); // eslint-disable-line no-eval
       setHelpEndPhrase(false);
     } catch (e) {
       setErrorMessage(e.message);
@@ -261,7 +266,7 @@ function App() {
         <Scientific handleClick={handleClick} phrase={phrase} result={result} />
       </Route>
       <Route path="/">
-        <History />
+        <History submit={submit} />
       </Route>
       <Footer />
     </div>

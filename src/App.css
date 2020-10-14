@@ -21,10 +21,10 @@ h2 /* by: James Mernin */ {
 }
 
 h3 /* History */ {
+  display: inline;
   font-size: 80%;
   margin: 10px 0;
   padding: 0;
-  text-align: center;
 }
 
 h4 /* copyright */ {
@@ -40,11 +40,6 @@ img {
   margin: 0 2px;
 }
 
-.selected {
-  background-color: #00FF00;
-  color: #222222;
-}
-
 .mode {
   padding: 0;
   font-size: 10px;
@@ -56,6 +51,7 @@ img {
   height: 37px;
   background-color: #222222;
   margin: 0 0 0 60px;
+  overflow: visible;
 }
 
 .lastCalc,
@@ -85,12 +81,22 @@ text-align: right;
   height: 20px;
 }
 
+#historyHeader {
+  display: inline;
+}
+
+#deleteHistory {
+  margin: 5px;
+  width: 120px;
+}
+
 #historyList {
   border-radius: 5px;
   background-color: #222222;
   margin: 0 0 5px 60px;
   width: 240px;
   height: 235px;
+  overflow: scroll;
 }
 
 #footer {

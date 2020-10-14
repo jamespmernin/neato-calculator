@@ -1,22 +1,19 @@
 import React from 'react';
 // import axios from 'axios';
 
-function History() {
-  // let prefix = 'https://api.airtable.com/v4/'
-  /* let base = REACT_APP_AIRTABLE_BASE;
-  let key = REACT_APP_AIRTABLE_KEY; */
-
-  // let url = `${prefix}${base}`;
-
-  /* const postApi = async () => {
-    await axios.post(url);
-  } */
+function History(props) {
+  const deleteHistory = () => {
+    // Delete everything in axios with delete call
+  }
 
   return (
     <div className="history">
-      <h3>History</h3>
+      <span id="historyHeader">
+        <h3>History</h3>
+        <button id="deleteHistory" onClick={deleteHistory}>Delete</button>
+      </span>
       <p id="historyList">
-
+        {props.submit}
       </p>
     </div>
   );
