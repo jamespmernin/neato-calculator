@@ -12,9 +12,9 @@ function History(props) {
         <h3>History</h3>
         <button id="deleteHistory" onClick={deleteHistory}>Delete</button>
       </span>
-      <p id="historyList">
-        {props.submit}
-      </p>
+      <div id="historyList">
+        {props.history.map((h, idx) => <h6 key={idx}>{h.fields.entry}</h6>)}
+      </div>
     </div>
   );
 }

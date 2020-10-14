@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './components/Footer';
@@ -13,9 +13,27 @@ function App() {
   const [number, setNumber] = useState('');
   const [phrase, setPhrase] = useState('');
   const [result, setResult] = useState('0');
-  const [submit, setSubmit] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [helpEndPhrase, setHelpEndPhrase] = useState(false);
+  const [history, setHistory] = useState([]);
+  const [getHistory, toggleGetHistory] = useState(false);
+
+  useEffect(() => {
+    const fetchHistory = async () => {
+      const urlPrefix = 'https://api.airtable.com/v0/';
+      const base = process.env.REACT_APP_AIRTABLE_BASE;
+      const table = '/History';
+      const airtableUrl = `${urlPrefix}${base}${table}`;
+      const response = await axios.get(airtableUrl, {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
+        }
+      });
+      // Sort records by createdTime field (waterlogged as example)
+      setHistory(response.data.records);
+    }
+    fetchHistory();
+  }, [getHistory]);
 
   const addZero = () => {
     if (number === '') {
@@ -36,11 +54,7 @@ function App() {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
       }
     });
-    setSubmit(await axios.get(airtableUrl, { fields }, {
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
-      }
-    }));
+    toggleGetHistory((prevGetHistory) => !prevGetHistory);
   }
 
   const evaluate = async () => {
@@ -266,7 +280,7 @@ function App() {
         <Scientific handleClick={handleClick} phrase={phrase} result={result} />
       </Route>
       <Route path="/">
-        <History submit={submit} />
+        <History history={history} />
       </Route>
       <Footer />
     </div>
