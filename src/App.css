@@ -28,8 +28,16 @@ h3 /* History */ {
 }
 
 h4 /* copyright */ {
-  font-size: 60%;
+  display: inline;
+  font-size: 80%;
   margin: 5px 0 0 0;
+  padding: 0 2px 5px 0;
+}
+
+img {
+  width: 5%;
+  height: 5%;
+  margin: 0 2px;
 }
 
 .selected {
@@ -80,9 +88,14 @@ text-align: right;
 #historyList {
   border-radius: 5px;
   background-color: #222222;
-  margin: 0 0 0 60px;
+  margin: 0 0 10px 60px;
   width: 240px;
   height: 235px;
+}
+
+#footer {
+  display: inline;
+  margin: 5px;
 }
 
 p {
