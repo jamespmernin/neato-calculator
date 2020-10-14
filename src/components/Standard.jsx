@@ -6,35 +6,35 @@ function Standard(props) {
     <>
       <Display phrase={props.phrase} result={props.result} />
       <div className='keypad'>
-        <button className='pad' name='percent' onClick={e => props.handleClick(e.target.name)}>%</button>
-        <button className='pad' name='%' onClick={e => props.handleClick(e.target.name)}>mod</button>
-        <button className='pad' name='clear' onClick={e => props.handleClick(e.target.name)}>C</button>
-        <button className='pad' name='delete' onClick={e => props.handleClick(e.target.name)}>⌫</button><br />
+        <button className='pad' onClick={e => props.handleClick('percent')}>%</button>
+        <button className='pad' onClick={e => props.handleClick('%')}>mod</button>
+        <button className='pad' onClick={e => props.handleClick('clear')}>C</button>
+        <button className='pad' onClick={e => props.handleClick('delete')}>⌫</button><br />
 
-        <button className='pad' name='invert' onClick={e => props.handleClick(e.target.name)}><sup>1</sup>/<sub><em>x</em></sub></button>
-        <button className='pad' name='square' onClick={e => props.handleClick(e.target.name)}><em>x</em><sup>2</sup></button>
-        <button className='pad' name='squareroot' onClick={e => props.handleClick(e.target.name)}>√</button>
-        <button className='pad' name='/' onClick={e => props.handleClick(e.target.name)}>÷</button><br />
+        <button className='pad' onClick={e => props.handleClick('invert')}><sup>1</sup>/<sub><em>x</em></sub></button>
+        <button className='pad' onClick={e => props.handleClick('square')}><em>x</em><sup>2</sup></button>
+        <button className='pad' onClick={e => props.handleClick('squareroot')}>√</button>
+        <button className='pad' onClick={e => props.handleClick('/')}>÷</button><br />
 
-        <button className='pad' name='7' onClick={e => props.handleClick(e.target.name)}>7</button>
-        <button className='pad' name='8' onClick={e => props.handleClick(e.target.name)}>8</button>
-        <button className='pad' name='9' onClick={e => props.handleClick(e.target.name)}>9</button>
-        <button className='pad' name='*' onClick={e => props.handleClick(e.target.name)}>×</button><br />
+        <button className='pad' onClick={e => props.handleClick('7')}>7</button>
+        <button className='pad' onClick={e => props.handleClick('8')}>8</button>
+        <button className='pad' onClick={e => props.handleClick('9')}>9</button>
+        <button className='pad' onClick={e => props.handleClick('*')}>×</button><br />
 
-        <button className='pad' name='4' onClick={e => props.handleClick(e.target.name)}>4</button>
-        <button className='pad' name='5' onClick={e => props.handleClick(e.target.name)}>5</button>
-        <button className='pad' name='6' onClick={e => props.handleClick(e.target.name)}>6</button>
-        <button className='pad' name='-' onClick={e => props.handleClick(e.target.name)}>-</button><br />
+        <button className='pad' onClick={e => props.handleClick('4')}>4</button>
+        <button className='pad' onClick={e => props.handleClick('5')}>5</button>
+        <button className='pad' onClick={e => props.handleClick('6')}>6</button>
+        <button className='pad' onClick={e => props.handleClick('-')}>-</button><br />
 
-        <button className='pad' name='1' onClick={e => props.handleClick(e.target.name)}>1</button>
-        <button className='pad' name='2' onClick={e => props.handleClick(e.target.name)}>2</button>
-        <button className='pad' name='3' onClick={e => props.handleClick(e.target.name)}>3</button>
-        <button className='pad' name='+' onClick={e => props.handleClick(e.target.name)}>+</button><br />
+        <button className='pad' onClick={e => props.handleClick('1')}>1</button>
+        <button className='pad' onClick={e => props.handleClick('2')}>2</button>
+        <button className='pad' onClick={e => props.handleClick('3')}>3</button>
+        <button className='pad' onClick={e => props.handleClick('+')}>+</button><br />
 
-        <button className='pad' name='negate' onClick={e => props.handleClick(e.target.name)}>+/-</button>
-        <button className='pad' name='0' onClick={e => props.handleClick(e.target.name)}>0</button>
-        <button className='pad' name='decimal' onClick={e => props.handleClick(e.target.name)}>.</button>
-        <button className='pad' name='equals' onClick={e => props.handleClick(e.target.name)}>=</button><br />
+        <button className='pad' onClick={e => props.handleClick('negate')}>+/-</button>
+        <button className='pad' onClick={e => props.handleClick('0')}>0</button>
+        <button className='pad' onClick={e => props.handleClick('.')}>.</button>
+        <button className='pad' onClick={e => props.handleClick('equals')}>=</button><br />
       </div>
     </>
   );

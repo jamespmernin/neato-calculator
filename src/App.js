@@ -22,12 +22,12 @@ function App() {
     }
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (finalPhrase) => {
     const urlPrefix = 'https://api.airtable.com/v0/';
     const base = process.env.REACT_APP_AIRTABLE_BASE;
     const table = '/History';
     const fields = {
-      entry: phrase
+      entry: finalPhrase.toString()
     };
     const airtableUrl = `${urlPrefix}${base}${table}`;
     await axios.post(airtableUrl, { fields }, {
@@ -38,16 +38,23 @@ function App() {
   }
 
   const evaluate = async () => {
+    const finalPhrase = helpEndPhrase ? phrase + ')' : phrase;
     try {
-      await handleSubmit(); // eslint-disable-line no-eval
-      setResult(eval(phrase)); // eslint-disable-line no-eval
-      setPhrase(eval(phrase)); // eslint-disable-line no-eval
-      console.log(`History: ${phrase} = ${eval(phrase)}`); // eslint-disable-line no-eval
+      await handleSubmit(finalPhrase); // eslint-disable-line no-eval
+      setResult(eval(finalPhrase)); // eslint-disable-line no-eval
+      setPhrase(phrase + ' = ' + eval(finalPhrase)); // eslint-disable-line no-eval
+      console.log(`History: ${finalPhrase} = ${eval(finalPhrase)}`); // eslint-disable-line no-eval
       setHelpEndPhrase(false);
     } catch (e) {
       setErrorMessage(e.message);
       setPhrase('');
     }
+  }
+
+  const logResults = () => {
+    console.log(`Number: ${number}`);
+    console.log(`Phrase: ${phrase}`);
+    console.log(`Result: ${result}`);
   }
 
   const handleClick = (button) => {
@@ -65,16 +72,19 @@ function App() {
         // Number cases add the digit to a number
         setNumber(number + button);
         setPhrase(phrase + button);
+        logResults();
         break;
       case 'clear':
         // Delete everything
         setNumber('');
         setPhrase('');
         setResult('0');
+        logResults();
         break;
       case 'delete':
         // Delete one entry in phrase
         setPhrase(phrase.slice(0, -1));
+        logResults();
         break;
       case 'exponent':
         // exponent
@@ -84,6 +94,7 @@ function App() {
         }
         setPhrase(phrase + '**');
         setNumber('');
+        logResults();
         break;
       case 'yrootx':
         // yth root
@@ -92,108 +103,114 @@ function App() {
           setHelpEndPhrase(true);
           setNumber('');
         }
+        logResults();
         break;
       case 'tentothex':
         // Use number to return 10 to its power
         addZero();
-        setPhrase(phrase + `10**${number}`);
-        evaluate();
+        setPhrase(`10**${number}`);
+        logResults();
         break;
       case 'twotothex':
         // Use number to return 2 to its power
         addZero();
-        setPhrase(phrase + `2**${number}`);
-        evaluate();
+        setPhrase(`2**${number}`);
+        logResults();
         break;
       case 'log':
         // Log base 10
         addZero();
-        setPhrase(phrase + `Math.log10(${number})`);
-        evaluate();
+        setPhrase(`Math.log10(${number})`);
+        logResults();
         break;
       case 'logyx':
         // Log base y of x
         addZero();
         setPhrase(`Math.log(${number})/Math.log(10)`);
-        setHelpEndPhrase(true);
         setNumber('');
+        logResults();
         break;
       case 'naturallog':
         // Log base e
         addZero();
         setPhrase(`Math.log(${number})`);
-        evaluate();
+        logResults();
         break;
       case 'etothex':
         // Use number to return e to its power
         addZero();
-        setPhrase(`e**${number}`);
-        evaluate();
+        setPhrase(`Math.E**${number}`);
+        logResults();
         break;
       case 'pi':
         // Get value of pi
-        setNumber(Math.PI());
+        setNumber(Math.PI);
+        setPhrase(phrase + Math.PI)
         break;
       case 'e':
         // Get value of e
-        setNumber(Math.E());
+        setNumber(Math.E);
+        setPhrase(phrase + Math.E)
+        logResults();
         break;
       case 'absolute':
         // Get absolute value of number
         addZero();
-        setPhrase(phrase + `Math.abs(${number})`);
-        evaluate();
+        setPhrase(`Math.abs(${number})`);
+        logResults();
         break;
       case 'cube':
         // Cube the number
         if (number !== '') {
-          setNumber((Number(number) ** 3).toString());
-          evaluate();
+          setPhrase(`${number}**3`);
         }
+        logResults();
         break;
       case 'leftparen':
         // Add a left parenthesis
         setPhrase(phrase + '(');
+        logResults();
         break;
       case 'rightparen':
         // Add a right parenthesis
         setPhrase(phrase + ')');
+        logResults();
         break;
       case 'percent':
         // Add percent to number
         if (number !== '') {
-          setNumber((Number(number) / 100).toString());
-          evaluate();
+          setPhrase(phrase + '*.01');
         }
+        logResults();
         break;
       case 'invert':
         // Invert the number
         if (number !== '' && number !== '0') {
-          setNumber((1 / Number(number)).toString());
-          evaluate();
+          setPhrase(`1/${number}`);
         }
+        logResults();
         break;
       case 'square':
         // Square the number
         if (number === '') {
           setNumber('0');
         }
-        setNumber((Number(number) ** 2).toString());
-        evaluate();
+        setPhrase(`${number}**2`);
+        logResults();
         break;
       case 'squareroot':
         // Take the square root
         if (number !== '') {
-          setNumber(Math.sqrt(Number(number)).toString());
-          evaluate();
+          setNumber(`Math.sqrt(${number}`);
         }
+        logResults();
         break;
       case 'negate':
         // Change positive to negative and vice versa
         if (number !== '') {
-          setNumber((-Number(number)).toString());
-          evaluate();
+          setPhrase(`-${number})`);
         }
+        logResults();
         break;
       case '%':
       case '/':
@@ -205,8 +222,9 @@ function App() {
           setNumber(number + '0');
           setPhrase(phrase + '0');
         }
-        setPhrase(`${phrase} ${button} `);
+        setPhrase(`${number} ${button} `);
         setNumber(''); // Deleting number after symbol helps decimal checking
+        logResults();
         break;
       case 'decimal':
         // Add a decimal if not already there
@@ -214,27 +232,18 @@ function App() {
           setNumber(number + '.');
           setPhrase(phrase + '.');
         }
+        logResults();
         break;
       case 'equals':
         // Evaluate the expression
-        if (helpEndPhrase === true) {
-          try {
-            setPhrase(phrase + ')');
-            console.log(phrase);
-          } catch (e) {
-            setErrorMessage(e.message);
-            setPhrase('');
-          }
-        }
         evaluate();
+        logResults();
         break;
       default:
         setResult('Error');
+        logResults();
         break;
     }
-    console.log(`Number: ${number}`);
-    console.log(`Phrase: ${phrase}`);
-    console.log(`Result: ${result}`);
   }
 
   return (
