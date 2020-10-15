@@ -220,7 +220,8 @@ function App() {
       case 'squareroot':
         // Take the square root
         if (number !== '') {
-          setNumber(`Math.sqrt(${number}`);
+          setPhrase(`Math.sqrt(${number}`);
+          setHelpEndPhrase(true);
         }
         logResults();
         break;
