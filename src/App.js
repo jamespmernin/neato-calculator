@@ -13,7 +13,7 @@ function App() {
   const [number, setNumber] = useState('');
   const [phrase, setPhrase] = useState('');
   const [result, setResult] = useState('0');
-  const [errorMessage, setErrorMessage] = useState('');
+  // const [errorMessage, setErrorMessage] = useState('');
   const [helpEndPhrase, setHelpEndPhrase] = useState(false);
   const [history, setHistory] = useState([]);
   const [getHistory, toggleGetHistory] = useState(false);
@@ -65,7 +65,7 @@ function App() {
       setPhrase(phrase + ' = ' + eval(finalPhrase)); // eslint-disable-line no-eval
       setHelpEndPhrase(false);
     } catch (e) {
-      setErrorMessage(e.message);
+      setResult('Error');
       setPhrase('');
     }
   }
@@ -266,9 +266,8 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" id="app">
       <Header />
-      <h3>{errorMessage}</h3>
       <Mode />
       <Route exact path="/">
         <Redirect to="/standard" />

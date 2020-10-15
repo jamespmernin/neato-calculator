@@ -25,11 +25,11 @@ function History(props) {
   }
 
   return (
-    <div className="history">
-      <span id="historyHeader">
-        <h3>History</h3>
-        <button id="deleteHistory" onClick={deleteHistory}>Delete</button>
-      </span>
+    <div className="history" id="history">
+      <div id="historyHeader">
+        <h3 className="historyRow">History</h3>
+        <button className="historyRow" id="deleteHistory" onClick={deleteHistory}>Delete</button>
+      </div>
       <div id="historyList">
         {props.history.map((h, idx) => <h6 key={idx}>{h.fields.entry}</h6>)}
       </div>

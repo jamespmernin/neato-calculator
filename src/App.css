@@ -1,33 +1,9 @@
-/* Grid sorting, use layout lesson */
-
 * {
   background-color: #000000;
   color: #00FF00;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
-  width: 360px;
-}
 
-.App {
-  padding: 0;
-}
-
-h1 /* Neato Calculator */ {
-  text-align: center;
-  font-size: 18px;
-}
-
-h2 /* by: James Mernin */ {
-  text-align: center;
-  font-size: 10px;
-  margin: -5px;
-}
-
-h3 /* History */ {
-  display: inline;
-  font-size: 14px;
-  margin: 10px 0;
-  padding: 0;
 }
 
 h4 /* copyright */ {
@@ -37,11 +13,10 @@ h4 /* copyright */ {
   padding: 0 2px 5px 0;
 }
 
-h6 /* history entry */ {
+h6 {
+  margin: 10px auto;
+  padding: 10px;
   background-color: #222222;
-  margin: 5px 0;
-  padding: 0;
-  width: 240px;
 }
 
 img {
@@ -50,72 +25,331 @@ img {
   margin: 0 2px;
 }
 
-.mode {
-  padding: 0;
-  font-size: 10px;
-  width: 120px;
-}
-
-.result {
-  width: 240px;
-  height: 37px;
-  background-color: #222222;
-  margin: 0 0 0 60px;
-  overflow: visible;
-}
-
-.lastCalc,
-.resultText {
-  background-color: #222222;
-  font-size: 10px;
-  padding: 0 7px 0 0;
-  text-align: right;
-  width: 233px;
-}
-
-.resultText {
-font-size: 16px;
-text-align: right;
-}
-
-.keypad {
-  margin: 0;
-  padding: 0;
-}
-
-.pad {
-  font-size: 8px;
-  margin: 0;
-  padding: 0;
-  width: 60px;
-  height: 20px;
+#header {
+  grid-area: hhh;
+  font-size: 12px;
 }
 
 #historyHeader {
   display: inline;
 }
 
-#deleteHistory {
-  margin: 5px;
-  width: 120px;
-}
-
 #historyList {
-  border-radius: 5px;
   background-color: #222222;
-  margin: 0 0 5px 60px;
-  width: 240px;
-  height: 235px;
-  overflow: scroll;
+  min-height: 200px;
+  margin: 0 0 10px 0;
 }
 
-#footer {
+.historyRow {
+  margin: 10px 10px;
   display: inline;
-  margin: 5px;
+}
+
+.pad {
+  font-size: 12px;
+}
+
+#mode {
+  grid-area: mmm;
+}
+
+#standard-mode {
+  grid-area: mmm;
+}
+
+#scientific-mode {
+  grid-area: nnn;
+}
+
+.display {
+  background-color: #222222;
+  grid-area: ddd;
+  text-align: right;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.lastCalc,
+.resultText {
+  margin: 0;
+  padding: 0;
 }
 
 p {
-  margin: 0;
+  text-align: right;
+  background-color: #222222;
+}
+
+#s11 {
+  grid-area: s11;
+}
+
+#s12 {
+  grid-area: s12;
+}
+
+#s13 {
+  grid-area: s13;
+}
+
+#s14 {
+  grid-area: s14;
+}
+
+#s21 {
+  grid-area: s21;
+}
+
+#s22 {
+  grid-area: s22;
+}
+
+#s23 {
+  grid-area: s23;
+}
+
+#s24 {
+  grid-area: s24;
+}
+
+#s31 {
+  grid-area: s31;
+}
+
+#s32 {
+  grid-area: s32;
+}
+
+#s33 {
+  grid-area: s33;
+}
+
+#s34 {
+  grid-area: s34;
+}
+
+#s41 {
+  grid-area: s41;
+}
+
+#s42 {
+  grid-area: s42;
+}
+
+#s43 {
+  grid-area: s43;
+}
+
+#s44 {
+  grid-area: s44;
+}
+
+#s51 {
+  grid-area: s51;
+}
+
+#s52 {
+  grid-area: s52;
+}
+
+#s53 {
+  grid-area: s53;
+}
+
+#s54 {
+  grid-area: s54;
+}
+
+#s61 {
+  grid-area: s61;
+}
+
+#s62 {
+  grid-area: s62;
+}
+
+#s63 {
+  grid-area: s63;
+}
+
+#s64 {
+  grid-area: s64;
+}
+
+#t11 {
+  grid-area: s11;
+}
+
+#t12 {
+  grid-area: s12;
+}
+
+#t13 {
+  grid-area: s13;
+}
+
+#t14 {
+  grid-area: s14;
+}
+
+#t21 {
+  grid-area: s21;
+}
+
+#t22 {
+  grid-area: s22;
+}
+
+#t23 {
+  grid-area: s23;
+}
+
+#t24 {
+  grid-area: s24;
+}
+
+#t31 {
+  grid-area: s31;
+}
+
+#t32 {
+  grid-area: s32;
+}
+
+#t33 {
+  grid-area: s33;
+}
+
+#t34 {
+  grid-area: s34;
+}
+
+#t41 {
+  grid-area: s41;
+}
+
+#t42 {
+  grid-area: s42;
+}
+
+#t43 {
+  grid-area: s43;
+}
+
+#t44 {
+  grid-area: s44;
+}
+
+#t51 {
+  grid-area: s51;
+}
+
+#t52 {
+  grid-area: s52;
+}
+
+#t53 {
+  grid-area: s53;
+}
+
+#t54 {
+  grid-area: s54;
+}
+
+#t61 {
+  grid-area: s61;
+}
+
+#t62 {
+  grid-area: s62;
+}
+
+#t63 {
+  grid-area: s63;
+}
+
+#t64 {
+  grid-area: s64;
+}
+
+#t71 {
+  grid-area: t71;
+}
+
+#t72 {
+  grid-area: t72;
+}
+
+#t73 {
+  grid-area: t73;
+}
+
+#t74 {
+  grid-area: t74;
+}
+
+#t81 {
+  grid-area: t81;
+}
+
+#t82 {
+  grid-area: t82;
+}
+
+#t83 {
+  grid-area: t83;
+}
+
+#t84 {
+  grid-area: t84;
+}
+
+#t91 {
+  grid-area: t91;
+}
+
+#t92 {
+  grid-area: t92;
+}
+
+#t93 {
+  grid-area: t93;
+}
+
+#t94 {
+  grid-area: t94;
+}
+
+#standard-display {
+  grid-area: xxx;
+}
+
+#scientific-display {
+  grid-area: yyy;
+}
+
+#history {
+  grid-area: eee;
+}
+
+#footer {
+  grid-area: fff;
+}
+
+.keypad {
+  display: grid;
+  width: 100vw;
+
+  grid-template-areas:
+"s11 s12 s13 s14"
+"s21 s22 s23 s24"
+"s31 s32 s33 s34"
+"s41 s42 s43 s44"
+"s51 s52 s53 s54"
+"s61 s62 s63 s64"
+"t71 t72 t73 t74"
+"t81 t82 t83 t84"
+"t91 t92 t93 t94"
 }
 
 /* Following CSS fix found here: https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/ */
@@ -126,43 +360,4 @@ sup, sub {
 }
 sub { 
   top: 0.4em; 
-}
-
-@media screen and (min-width: 768px) and (max-width: 1279px) and (min-height: 1024px) {
-  * {
-    transform: scale(1.08);
-    transform-origin: 0 0;
-  }
-
-  .result {
-    margin: 10px 0 0 65px;
-  }
-
-  .history {
-    margin: 25px 0 50px 0;
-  }
-
-  h3 {
-    margin: 20px;
-    padding: 10px;
-  }
-
-  #footer {
-    padding-left: 50px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  * {
-    transform: scale(1.02);
-    transform-origin: 0 0;
-  }
-
-  h2 {
-    margin: -10px;
-  }
-
-  .history {
-    margin: 10px 0 20px 0;
-  }
 }

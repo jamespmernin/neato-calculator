@@ -4,16 +4,16 @@ import React from 'react';
 function Display(props) {
   if (!props.phrase) {
     return (
-      <div className="result">
+      <div className="result" className="display">
         <p className="lastCalc"><br /></p>
         <p className="resultText">0</p>
       </div>
     )
   } else {
     return (
-      <div className="result">
-        <p className="lastCalc">{props.phrase}</p>
-        <p className="resultText">{props.result}</p>
+      <div className="result" className="display">
+        <p className="lastCalc">{props.phrase} </p>
+        <p className="resultText">{props.result} </p>
       </div>
     );
   }
