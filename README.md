@@ -86,12 +86,12 @@ Airtable Example:
 
 | Day | Deliverable | Status |
 |---|---| ---|
-| Oct 09 | Set up Airtable and API to make calls and store data. | Partially complete |
+| Oct 09 | Set up Airtable and API to make calls and store data. | Mostly complete |
 | Oct 10 | Set up basic HTML and CSS and build the window, adjust for media queries. | Mostly complete |
-| Oct 11 | Standard calculator mode! Get all of the standard calculations to produce. | Mostly complete |
-| Oct 12 | Scientific mode! Work on the scientific functions. | Mostly complete |
-| Oct 13 | Work on history functionality. | Incomplete |
-| Oct 14 | Finalize MVP to make sure project is presentable. | Incomplete |
+| Oct 11 | Standard calculator mode! Get all of the standard calculations to produce. | Complete |
+| Oct 12 | Scientific mode! Work on the scientific functions. | Complete |
+| Oct 13 | Work on history functionality. | Mostly complete |
+| Oct 14 | Finalize MVP to make sure project is presentable. | Mostly complete |
 | Oct 15 | Work on memory and programmer mode. | Incomplete |
 | Oct 16 | Present the project. | Incomplete |
 
@@ -99,15 +99,15 @@ Airtable Example:
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | --- | --- | ---|
-| Airtable and API | H | 3hrs | 1hr |
+| Airtable and API | H | 3hrs | 2hrs |
 | Structure Building | H | 4hrs | 5hrs |
 | Standard Mode (HTML/CSS/JS) | H | 5hrs | 5hrs |
 | Scientific Mode (HTML/CSS/JS) | H | 5hrs | 6hrs |
-| History with Airtable | M | 5hrs |  |
+| History with Airtable | M | 5hrs | 3hrs |
 | Testing and Cleanup | H | 5hrs | 2hrs |
-| Memory | L | 3hrs |
-| Programmer Mode (HTML/CSS/JS) | L | 5hrs |  |
-| Total | H | 35hrs |  |
+| Memory | L | 3hrs | 0hrs |
+| Programmer Mode (HTML/CSS/JS) | L | 5hrs | 0hrs |
+| Total | H | 35hrs | 23hrs |
 
 ## SWOT Analysis
 
