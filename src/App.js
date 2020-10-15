@@ -59,15 +59,18 @@ function App() {
 
   const evaluate = async () => {
     const finalPhrase = helpEndPhrase ? phrase + ')' : phrase;
-    try {
-      await handleSubmit(`${finalPhrase} = ${eval(finalPhrase)}`); // eslint-disable-line no-eval
-      setResult(eval(finalPhrase)); // eslint-disable-line no-eval
-      setPhrase(phrase + ' = ' + eval(finalPhrase)); // eslint-disable-line no-eval
-      setHelpEndPhrase(false);
-    } catch (e) {
-      setResult('Error');
-    } finally {
-      setPhrase('');
+    if (phrase != '') {
+      try {
+        await handleSubmit(`${finalPhrase} = ${eval(finalPhrase)}`); // eslint-disable-line no-eval
+        setResult(eval(finalPhrase)); // eslint-disable-line no-eval
+        setPhrase(phrase + ' = ' + eval(finalPhrase)); // eslint-disable-line no-eval
+        setHelpEndPhrase(false);
+      } catch (e) {
+        setResult('Error');
+      } finally {
+        setPhrase('');
+        setNumber('');
+      }
     }
   }
 
@@ -109,7 +112,7 @@ function App() {
       case 'yrootx':
         // yth root
         if (number !== '') {
-          setPhrase(`Math.pow(${number}, 1/`);
+          setPhrase(`Math.pow(${phrase}, 1/`);
           setHelpEndPhrase(true);
           setNumber('');
         }
@@ -117,33 +120,33 @@ function App() {
       case 'tentothex':
         // Use number to return 10 to its power
         addZero();
-        setPhrase(`10**${number}`);
+        setPhrase(`10**${phrase}`);
         break;
       case 'twotothex':
         // Use number to return 2 to its power
         addZero();
-        setPhrase(`2**${number}`);
+        setPhrase(`2**${phrase}`);
         break;
       case 'log':
         // Log base 10
         addZero();
-        setPhrase(`Math.log10(${number})`);
+        setPhrase(`Math.log10(${phrase})`);
         break;
       case 'logyx':
         // Log base y of x
         addZero();
-        setPhrase(`Math.log(${number})/Math.log(10)`);
+        setPhrase(`Math.log(${phrase})/Math.log(10)`);
         setNumber('');
         break;
       case 'naturallog':
         // Log base e
         addZero();
-        setPhrase(`Math.log(${number})`);
+        setPhrase(`Math.log(${phrase})`);
         break;
       case 'etothex':
         // Use number to return e to its power
         addZero();
-        setPhrase(`Math.E**${number}`);
+        setPhrase(`Math.E**${phrase}`);
         break;
       case 'pi':
         // Get value of pi
@@ -158,12 +161,18 @@ function App() {
       case 'absolute':
         // Get absolute value of number
         addZero();
-        setPhrase(`Math.abs(${number})`);
+        setPhrase(`Math.abs(${phrase})`);
         break;
       case 'cube':
         // Cube the number
         if (number !== '') {
-          setPhrase(`${number}**3`);
+          setPhrase(`${phrase}**3`);
+        }
+        break;
+      case 'factorial':
+        // Factorial phrase
+        if (number != '') {
+          setPhrase(`Math.fact(${phrase})`);
         }
         break;
       case 'leftparen':
@@ -183,7 +192,7 @@ function App() {
       case 'invert':
         // Invert the number
         if (number !== '' && number !== '0') {
-          setPhrase(`1/${number}`);
+          setPhrase(`1/${phrase}`);
         }
         break;
       case 'square':
@@ -191,19 +200,20 @@ function App() {
         if (number === '') {
           setNumber('0');
         }
-        setPhrase(`${number}**2`);
+        setPhrase(phrase + `**2`);
         break;
       case 'squareroot':
         // Take the square root
         if (number !== '') {
-          setPhrase(`Math.sqrt(${number}`);
+          setPhrase(`Math.sqrt(${phrase}`);
           setHelpEndPhrase(true);
         }
         break;
       case 'negate':
         // Change positive to negative and vice versa
         if (number !== '') {
-          setPhrase(`-${number})`);
+          // setNumber(`-${phrase}`);
+          setPhrase(`-(${phrase})`);
         }
         break;
       case '%':
@@ -216,10 +226,10 @@ function App() {
           setNumber(number + '0');
           setPhrase(phrase + '0');
         }
-        setPhrase(`${number} ${button} `);
+        setPhrase(phrase + button);
         setNumber(''); // Deleting number after symbol helps decimal checking
         break;
-      case 'decimal':
+      case '.':
         // Add a decimal if not already there
         if (!number.includes('.')) {
           setNumber(number + '.');

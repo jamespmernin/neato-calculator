@@ -37,8 +37,9 @@ img {
 
 #historyList {
   background-color: #222222;
-  min-height: 200px;
+  height: 200px;
   margin: 0 0 10px 0;
+  overflow: scroll;
 }
 
 .historyRow {
@@ -64,14 +65,15 @@ img {
 
 .display {
   background-color: #222222;
+  height: 50px;
   grid-area: ddd;
   text-align: right;
   margin: 0 auto;
   padding: 0;
+  vertical-align: center;
 }
 
-.lastCalc,
-.resultText {
+.lastCalc {
   margin: 0;
   padding: 0;
 }

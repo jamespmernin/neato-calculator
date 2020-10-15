@@ -23,8 +23,8 @@ function Scientific(props) {
 
         <button className='pad' id='t41' onClick={e => props.handleClick('invert')}><sup>1</sup>/<sub><em>x</em></sub></button>
         <button className='pad' id='t42' onClick={e => props.handleClick('absolute')}>|<em>x</em>|</button>
-        <button className='pad' id='t43' onClick={e => props.handleClick('cube')}>x<sup>3</sup></button>
-        <button className='pad' id='t44' onClick={e => props.handleClick('factorial')}><em>x</em>!</button>
+        <button className='pad' id='t43' onClick={e => props.handleClick('square')}><em>x</em><sup>2</sup></button>
+        <button className='pad' id='t44' onClick={e => props.handleClick('cube')}>x<sup>3</sup></button>
 
         <button className='pad' id='t51' onClick={e => props.handleClick('leftparen')}>(</button>
         <button className='pad' id='t52' onClick={e => props.handleClick('rightparen')}>)</button>
@@ -48,7 +48,7 @@ function Scientific(props) {
 
         <button className='pad' id='t91' onClick={e => props.handleClick('negate')}>+/-</button>
         <button className='pad' id='t92' onClick={e => props.handleClick('0')}>0</button>
-        <button className='pad' id='t93' onClick={e => props.handleClick('decimal')}>.</button>
+        <button className='pad' id='t93' onClick={e => props.handleClick('.')}>.</button>
         <button className='pad' id='t94' onClick={e => props.handleClick('equals')}>=</button>
       </div>
     </div>

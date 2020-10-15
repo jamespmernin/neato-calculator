@@ -27,8 +27,8 @@ function History(props) {
   return (
     <div className="history" id="history">
       <div id="historyHeader">
-        <h3 className="historyRow">History</h3>
-        <button className="historyRow" id="deleteHistory" onClick={deleteHistory}>Delete</button>
+        <h3 className="historyRow">Result History</h3>
+        <button className="historyRow" id="deleteHistory" onClick={deleteHistory}>Clear</button>
       </div>
       <div id="historyList">
         {props.history.map((h, idx) => <h6 key={idx}>{h.fields.entry}</h6>)}
