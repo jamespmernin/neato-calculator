@@ -59,7 +59,7 @@ function App() {
 
   const evaluate = async () => {
     const finalPhrase = helpEndPhrase ? phrase + ')' : phrase;
-    if (phrase != '') {
+    if (phrase !== '') {
       try {
         await handleSubmit(`${finalPhrase} = ${eval(finalPhrase)}`); // eslint-disable-line no-eval
         setResult(eval(finalPhrase)); // eslint-disable-line no-eval
@@ -167,12 +167,6 @@ function App() {
         // Cube the number
         if (number !== '') {
           setPhrase(`${phrase}**3`);
-        }
-        break;
-      case 'factorial':
-        // Factorial phrase
-        if (number != '') {
-          setPhrase(`Math.fact(${phrase})`);
         }
         break;
       case 'leftparen':
