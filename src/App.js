@@ -280,7 +280,7 @@ function App() {
         <Scientific handleClick={handleClick} phrase={phrase} result={result} />
       </Route>
       <Route path="/">
-        <History history={history} />
+        <History history={history} toggleGetHistory={toggleGetHistory} />
       </Route>
       <Footer />
     </div>

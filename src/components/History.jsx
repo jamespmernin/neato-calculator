@@ -8,11 +8,20 @@ function History(props) {
   const airtableUrl = `${urlPrefix}${base}${table}`;
 
   const deleteHistory = async () => {
-    const response = await axios.delete(airtableUrl, { data: { entry: '' } }, {
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
-      }
-    });
+    const urls = props.history.map((h) => `${airtableUrl}/${h.id}`);
+    const time = urls.length * 200;
+    urls.forEach((url, i) => {
+      setTimeout(async () => {
+        await axios.delete(url, {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
+          }
+        });
+      }, 200 * (i + 1))
+    })
+    setTimeout(() => {
+      props.toggleGetHistory((prevGetHistory) => !prevGetHistory)
+    }, time + 1000);
   }
 
   return (
