@@ -1,9 +1,18 @@
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 function History(props) {
-  const deleteHistory = () => {
-    // Delete everything in axios with delete call
+  const urlPrefix = 'https://api.airtable.com/v0/';
+  const base = process.env.REACT_APP_AIRTABLE_BASE;
+  const table = '/History';
+  const airtableUrl = `${urlPrefix}${base}${table}`;
+
+  const deleteHistory = async () => {
+    const response = await axios.delete(airtableUrl, { data: { entry: '' } }, {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`
+      }
+    });
   }
 
   return (
