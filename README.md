@@ -2,6 +2,8 @@
 
 ## Neato Calculator
 
+[Link](https://flamboyant-clarke-014d25.netlify.app/)
+
 ## Project Description
 
 Using a calculator API with common functionality stored in Airtable, this app will be designed to perform all types of calculations. There will be multiple modes, including standard, scientific, and (optionally) programming, and the history will keep track of all of your calculations.
@@ -28,6 +30,8 @@ Using a calculator API with common functionality stored in Airtable, this app wi
 The following response is given when this GET request is made: `GET http://api.mathjs.org/v4/?expr=2%2F3&precision=3`
 
 `0.667`
+
+UPDATE: The API functionality was abandoned for direct calculation.
 
 ### React Router
 
@@ -86,28 +90,28 @@ Airtable Example:
 
 | Day | Deliverable | Status |
 |---|---| ---|
-| Oct 09 | Set up Airtable and API to make calls and store data. | Mostly complete |
-| Oct 10 | Set up basic HTML and CSS and build the window, adjust for media queries. | Mostly complete |
+| Oct 09 | Set up Airtable and API to make calls and store data. | Complete |
+| Oct 10 | Set up basic HTML and CSS and build the window, adjust for media queries. | Complete |
 | Oct 11 | Standard calculator mode! Get all of the standard calculations to produce. | Complete |
 | Oct 12 | Scientific mode! Work on the scientific functions. | Complete |
-| Oct 13 | Work on history functionality. | Mostly complete |
-| Oct 14 | Finalize MVP to make sure project is presentable. | Mostly complete |
-| Oct 15 | Work on memory and programmer mode. | Incomplete |
+| Oct 13 | Work on history functionality. | Complete |
+| Oct 14 | Finalize MVP to make sure project is presentable. | Complete |
+| Oct 15 | Work on memory and programmer mode. | Not attempted |
 | Oct 16 | Present the project. | Incomplete |
 
 ## Timeframes
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | --- | --- | ---|
-| Airtable and API | H | 3hrs | 2hrs |
+| Airtable and API | H | 3hrs | 5hrs |
 | Structure Building | H | 4hrs | 5hrs |
-| Standard Mode (HTML/CSS/JS) | H | 5hrs | 5hrs |
-| Scientific Mode (HTML/CSS/JS) | H | 5hrs | 6hrs |
-| History with Airtable | M | 5hrs | 3hrs |
-| Testing and Cleanup | H | 5hrs | 2hrs |
+| Standard Mode (HTML/CSS/JS) | H | 5hrs | 6hrs |
+| Scientific Mode (HTML/CSS/JS) | H | 5hrs | 7hrs |
+| History with Airtable | M | 5hrs | 4hrs |
+| Testing and Cleanup | H | 5hrs | 4hrs |
 | Memory | L | 3hrs | 0hrs |
 | Programmer Mode (HTML/CSS/JS) | L | 5hrs | 0hrs |
-| Total | H | 35hrs | 23hrs |
+| Total | H | 35hrs | 31hrs |
 
 ## SWOT Analysis
 
