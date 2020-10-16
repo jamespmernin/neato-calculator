@@ -2,7 +2,7 @@
 
 ## Neato Calculator
 
-[Link](https://flamboyant-clarke-014d25.netlify.app/)
+[Link](https://mernin-neato-calculator.netlify.app/)
 
 ## Project Description
 
